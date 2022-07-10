@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+a:link{
+    color: none;
+}
+*::selection{
+    background: rgb(226, 222, 218);
+    color: rgb(163, 163, 177);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1.7rem;
+}
+/*----------------nav bar begin----------------*/
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;left: 0;
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    background: rgb(221, 112, 11);
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+    text-decoration: none;
+    
+}
+header :hover{
+    color: black;
+}
+header .logo{
+    color: whitesmoke;
+    font-size: 2.5rem;
+    font-style: oblique;
+    font-stretch: expanded;
+    text-decoration: none;
+    left: -30%;
+    padding-left: none
+    ;
+    
+}
+header i{
+    top: 70%;
+}
+b{
+    font-weight: 900;
+    font-size: 120%;
+    font-style: normal;
+    text-decoration: none;
+}
+a:link{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+header :hover{
+    color: black;
+}
+header .navbar ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    
+}
+header .navbar ul li{
+    margin: 0 1rem;
+    text-decoration: none;
+    
+}
+header .navbar ul li a{
+    font-size: 250%;
+    color: wheat;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    bottom: -50%;
+}
+a:link{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+
+header .navbar ul li a:hover{
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+}
+header #login{
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration: none;
+}
+header #login:hover{
+    color: black;
+    text-decoration: none;
+}
+header div #login:hover{
+    color: black;
+}
+#logo, .log:hover{
+    color: black;
+    
+}
+header #menu{
+    font-size: 2rem;
+    color:white;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+}
+header .log{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    float: right;
+    font-size: 75%;
+    padding-left: 6px;
+    padding-top: 4px;
+    text-decoration: none;
+}
+
+.log:hover{
+    color: black;
+}
+.log:link{
+    color: rgb(255, 255, 255);
+}
+header a:hover{
+    color: black;
+}
+header div a:hover{
+    color: black;
+}
+
+
+/*----------------media element for responsive navbar----------------*/
+@media (max-width:1020px){
+    html{
+        font-size: 55%;
+        }
+    header #menu{
+        display: block;
+    }    
+    header .navbar{
+        position: fixed;
+        top: -120%;left:0;
+        width: 100%;
+        background: grey;
+    }
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+    header .navbar ul li{
+        margin: 1.5rem 0;
+        text-align: center;
+         width: 100%;
+    }
+    header .navbar ul li a{
+        font-size: 2rem;
+        display: block;
+    }
+    header .navbar ul li a .active,
+    header .navbar ul li a:hover{
+        color: black;
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    header .navbar.nav-toggle{
+        top:6.4rem;
+    }
+}
+/*----------------nav bar ends----------------*/
+
+/*----------------main tag begins----------------*/
+main{
+  margin: auto; 
+  padding-bottom: 50px;
+  
+}
+.cover{
+    background: url(/images/25.jpg);
+    background-size:cover;
+    padding-top: 230px;
+    padding-bottom: 200px;
+}
+main div h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-size: 450%;
+    padding-bottom: 70px;
+}
+main div div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+main div div span{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 1%;
+    padding-bottom: 0px;
+}
+
+main div .cols{
+    flex-direction: column;
+    border-radius: 30px;
+}
+.cols h1{
+    padding: 50px 10px;
+    text-decoration: underline;
+}
+.column{
+    display: flex;
+    overflow: none;
+    width: 100%;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.scho{
+    display: flex;  
+    border: solid 1.5px gray;
+    border-radius: 10px;
+    flex-direction: column;
+    padding-bottom: 0;
+    overflow: auto;
+    width: 42%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.835);
+    transition: transform .2s;  
+}
+
+
+.scho h3{
+    padding-top: 20px;    
+    padding: 30px;
+    font-weight: 500;
+    color: #4c3f91;
+    background-color: #bbbbbb;
+    margin: auto;
+    font-family: "Kanit", sans-serif;
+    width: 100%;
+    font-size: 250%;
+    text-decoration: underline;
+    text-align: center;
+}
+.align{
+    width: 100%;
+    background-color: beige;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    padding: none;
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    left: 0px;
+}
+.col1{
+    display: flex;
+    left: 0;
+    flex-direction: row;
+    background-color: beige;
+    width: 100%;
+    font-size: 200%;
+    border: none;
+    padding: none;
+}
+.height{
+    height: 20px;
+}
+.bttn1 {
+    background-color: bisque;
+    border-color: azure;
+    text-decoration: none;
+    width: 18rem;
+    cursor: pointer;
+    height: 6rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    transition: transform .2s;  
+    border: 2px solid black;
+    border-radius: 50px;
+  }
+.bttn1:hover {
+    background: #4c3f91;
+    color: white;
+    transform: scale(1.15);
+  }
+
+.bttn2 {
+    background-color: bisque;
+    border-color: azure;
+    text-decoration: none;
+    width: 15rem;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    transition: transform .2s;  
+    border: 2px solid black;
+    border-radius: 30px;
+  }
+.bttn2:hover {
+    background: #4c3f91;
+    color: white;
+    transform: scale(1.15);
+  }
+
+.apply{
+    padding: 15px;
+}
+.scho:hover {
+    transform: scale(1.1);
+  }
+
+/*----------------footer----------------*/
+
+.container{
+    max-width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #24262b;
+    padding: 60px 0;
+    display: flex;
+}
+.footer-col{
+    flex: 1 1 50%;
+    width: 25%;
+    padding: 0 15px;
+    justify-content: center;
+}
+.footer-col h1{
+    font-size: 220%;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 220%;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.2s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 10%;
+    width: 9%;
+    background-color: rgba(255, 255, 255,0.2);
+    margin:10px 15px 15px 0;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+.footer-col div ul li {
+    position: relative; 
+  }
+  .footer-col div ul li ::after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    display: block;
+    height:2px;
+    background-color: #e91e63;
+    bottom: -8px;
+  }
+@media(max-width:767px){
+    .footer-col{
+        width: auto;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:574px){
+    .footer-col{
+        width: 100px
+    }
+}

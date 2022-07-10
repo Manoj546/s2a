@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+a:link{
+    color: none;
+}
+*::selection{
+    background: rgb(226, 222, 218);
+    color: rgb(163, 163, 177);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1.7rem;
+}
+html::-webkit-scrollbar-track{
+    background: rgba(82, 80, 79, 0.555);
+}
+html::-webkit-scrollbar-thumb{
+    background:rgb(82, 80, 79);
+}
+/*----------------nav bar begin----------------*/
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;left: 0;
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    background: rgb(221, 112, 11);
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+    text-decoration: none;    
+}
+header :hover{
+    color: black;
+}
+header .logo{
+    color: whitesmoke;
+    font-size: 2.5rem;
+    font-style: oblique;
+    font-stretch: expanded;
+    text-decoration: none;
+    left: -30%;
+    padding-left: none
+    ;
+    
+}
+header i{
+    top: 70%;
+}
+b{
+    font-weight: 900;
+    font-size: 120%;
+    font-style: normal;
+    text-decoration: none;
+}
+a:link{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+header :hover{
+    color: black;
+}
+header .navbar ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;    
+}
+header .navbar ul li{
+    margin: 0 1rem;
+    text-decoration: none;    
+}
+header .navbar ul li a{
+    font-size: 250%;
+    color: wheat;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    bottom: -50%;
+}
+a:link{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+
+header .navbar ul li a:hover{
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+}
+header #login{
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration: none;
+}
+header #login:hover{
+    color: black;
+    text-decoration: none;
+}
+header div #login:hover{
+    color: black;
+}
+#logo, .log:hover{
+    color: black;
+    
+}
+header #menu{
+    font-size: 2rem;
+    color:white;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+}
+header .log{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    float: right;
+    font-size: 75%;
+    padding-left: 6px;
+    padding-top: 4px;
+    text-decoration: none;
+}
+
+.log:hover{
+    color: black;
+}
+.log:link{
+    color: rgb(255, 255, 255);
+}
+header a:hover{
+    color: black;
+}
+header div a:hover{
+    color: black;
+}
+
+
+/*----------------media element for responsive navbar----------------*/
+@media (max-width:1020px){
+    html{
+        font-size: 55%;
+        }
+    header #menu{
+        display: block;
+    }    
+    header .navbar{
+        position: fixed;
+        top: -120%;left:0;
+        width: 100%;
+        background: grey;
+    }
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+    header .navbar ul li{
+        margin: 1.5rem 0;
+        text-align: center;
+         width: 100%;
+    }
+    header .navbar ul li a{
+        font-size: 2rem;
+        display: block;
+    }
+    header .navbar ul li a .active,
+    header .navbar ul li a:hover{
+        color: black;
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    header .navbar.nav-toggle{
+        top:6.4rem;
+    }
+}
+/*----------------nav bar ends----------------*/
+
+
+
+.arrow{
+  padding: 3%;
+  color: black;
+  background-color: rgb(29, 27, 27);
+}
+
+
+/*----------------main tag begins----------------*/
+main {
+  width: 90vw;
+  margin: 0 auto;
+  min-height: calc(100vh - 75px - -1000px);
+}
+main span {
+  align-content: center;
+  display: flex;
+  position: relative;
+  margin: auto;
+  font-size: 400%;
+  font-weight: 700;
+  font-stretch: expanded;
+  justify-content: center;
+  align-self: auto;
+  text-decoration: underline;
+  color: rgba(59, 59, 59, 0.897);
+  text-shadow: #000000;
+  padding-bottom: 70px;
+  padding-top: 40px;
+}
+.how{
+  list-style: disc;
+  font-size: 180%;
+  padding-top: 2%;
+  padding-bottom: none;
+  align-content: center;
+  padding-left: 2%;
+  width: 100%;
+}
+
+/*----------------marquee part----------------*/
+.marquee {
+  color: #f1c40f;
+  padding: 0px;
+  font-weight: 500;
+  font-size: x-large;
+  background-color: #4c3f91;
+  padding: 0.4%;
+  width: 100%;
+  border-radius: 18px;
+}
+.marquee a{
+  animation: mover 6s linear infinite;
+  transform: translateX(100%);
+  position: relative;
+}
+@keyframes mover {
+  30%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(100%);
+    transition-delay: 8s;
+  }
+}
+.marquee a:link {
+  color: #f1c40f;
+}
+.marquee a:visited {
+  color: #f1c40f;
+}
+.marquee a:hover {
+  color: #f1c40f;
+}
+.marquee a:active {
+  color: #f1c40f;
+}
+marquee a:link {
+  color: #f1c40f;
+}
+/*----------------the text below marquee(about part)----------------*/
+.about {
+  top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px;
+  font-family: "Kanit", sans-serif;
+  border-left: solid 30px purple;
+  border-right: solid 30px purple;
+}
+
+.about .image {
+  flex: 1 1 50rem;
+}
+
+.about .image img {
+  height: 50vh;
+  width: 100%;
+}
+.bttn {
+    background-color: bisque;
+    border-color: azure;
+    text-decoration: none;
+    width: 18rem;
+    cursor: pointer;
+    height: 6rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    padding-left: 3%;
+  }
+  .bttn:hover {
+    background: #4c3f91;
+    color: white;
+  }
+
+.about .content {
+  flex: 1 1 50rem;
+  padding-left: 20px;
+  color: rgb(53, 51, 51);
+  background-color: silver;
+  padding: 16px;
+  height: 475px;
+  padding: 1% 3%;
+  padding-top: 15px;
+}
+
+.about .content h3 {
+  font-size: 400%;
+  font-weight: 500;
+  padding-bottom: 30px;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+  font-family: "Kanit", sans-serif;
+}
+
+.about .content p {
+  font-size: 170%;
+  color: rgb(0, 0, 0);
+  padding: 0.3rem 0;
+  font-family: "Kanit", sans-serif;
+}
+
+.bttn {
+  background-color: bisque;
+  border-color: azure;
+  text-decoration: none;
+  justify-items: center;
+  width: 18rem;
+  cursor: pointer;
+  height: 6rem;
+  font-size: 200%;
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  transition: transform .2s;  
+  border: 2px solid black;
+}
+.bttn:hover {
+  background: #4c3f91;
+  color: white;
+  transform: scale(1.15);
+}
+/* student highlights */
+.product{
+  background: rgba(121, 116, 116, 0.493);
+}
+.slider-wrap{
+  position: relative;
+  overflow: hidden;
+  height: 550px;
+}
+.slider-main{
+  position: absolute;
+  width: 400%;
+}
+.item{
+  width: 420px;
+  height: 490px;
+  display: inline-block;
+  background: rgb(42, 42, 42);
+  position: relative;
+  border: 5px  white;
+  margin: 20px;
+  border-radius: 10%;
+}
+.item:hover {
+  background:black;
+  color: white;
+  transform: scale(1.05);
+}
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color:#ffffff;
+  font-weight: bolder;
+}
+.text,.name{
+  text-align: center;
+}
+.text p1{
+  font-size: 125%;
+  padding-bottom: 30px;
+}
+.text p{
+  font-weight: 200;
+  font-style: italic;
+  padding-top: 10px;
+}
+.btn-area{
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+}
+.slider-btn{
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0px 15px;
+  background:black;
+  transition: 0.5s;
+}
+.slider-btn:hover{
+  background: rgb(163, 158, 158);
+  color: #000000;
+}
+
+/* ------------buttons-------------- */
+
+.stfc {
+  position: relative;
+  background-color: bisque;
+  border-width: 6px;
+  border-color: rgb(95, 62, 19);
+  text-decoration: none;
+  width: 27rem;
+  cursor: pointer;
+  height: 5rem;
+  font-size: 200%;
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  border-radius: 6rem;
+  margin: auto;
+  padding: 1% 2%;
+  transition: transform .2s;
+  border: 2px solid black;
+}
+.hdfc {
+    position: relative;
+    background-color: bisque;
+    border-width: 6px;
+    border-color: rgb(95, 62, 19);
+    text-decoration: none;
+    width: 27rem;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    border-radius: 6rem;
+    margin: auto;
+    padding: 1% 2%;
+    transition: transform .2s;
+    border: 2px solid black;
+  }
+  .rolls {
+    position: relative;
+    background-color: bisque;
+    border-width: 6px;
+    border-color: rgb(95, 62, 19);
+    text-decoration: none;
+    width: 27rem;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    border-radius: 6rem;
+    margin: auto;
+    padding: 1% 2%;
+    transition: transform .2s;
+    border: 2px solid black;
+  }
+  .gsk {
+    position: relative;
+    background-color: bisque;
+    border-width: 6px;
+    border-color: rgb(95, 62, 19);
+    text-decoration: none;
+    width: 27rem;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    border-radius: 6rem;
+    margin: auto;
+    padding: 1% 2%;
+    transition: transform .2s;
+    border: 2px solid black;
+  }
+.bttn2:hover {
+  background: #4c3f91;
+  color: white;
+  transform: scale(1.15);
+}
+
+/*----------------footer----------------*/
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}  
+.row {
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: #24262b;
+  padding: 60px 0;
+}
+.footer-col {
+  flex: 1 1 50%;
+  width: 25%;
+  padding: 0 25px;
+  justify-content: center;
+}
+.footer-col h1 {
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  font-size: 220%;
+}
+.footer-col h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 200%;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.2s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 10%;
+  width: 9%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 15px 15px 0;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+.footer-col div ul li {
+  position: relative; 
+}
+.footer-col div ul li ::after {
+  content: '';
+  position: absolute;
+  width: 10%;
+  display: block;
+  height:2px;
+  background-color: #e91e63;
+  bottom: -8px;
+}
+@media (max-width: 767px) {
+  .footer-col {
+    width: auto;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100px;
+  }
+}
