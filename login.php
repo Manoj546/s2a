@@ -1,26 +1,6 @@
-<?php
-    $uname= $_POST["uname"];
-    $pass = $_POST["pass"];
-    $error= "";
-    $success = "";
-    if(isset($_POST['submit'])){
-        if($uname == "admin"){
-            if($pass == "password"){
-                $error = "";
-                $success = "Welcome Admin!!";
-            }
-            else{
-                $error = "Invalid";
-                $success = "";
-            }
-        }
-        else{
-            $error= "Invalid username!!!";
-            $success= "";
-        }
-    }
+<?php 
+    include_once "connect.php";
 ?>
-<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +12,8 @@
     <title>Signin</title>
 </head>
 <body>
-<p class="error"><?php echo $error;?></p><p class="success"><?php echo $success;?></p>
-    <form action="/form.html" method="post">
+
+    <form action="signup.php" method="POST">
         <div class="login-wrap">
             <div class="login-html">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -42,11 +22,11 @@
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Username</label>
-                            <input id="user" type="text" name="uname" class="input" required>
+                            <input id="user" type="text" name="uname1" class="input" >
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" name="pass" class="input" data-type="password" required>
+                            <input id="pass" type="password" name="pass1" class="input" data-type="password" >
                         </div>
                         <div class="group">
                             <input id="check" type="checkbox" class="check" checked>
@@ -63,22 +43,22 @@
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input">
+                            <input id="user" type="text" class="input" name="uname">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <input id="pass" type="password" class="input" data-type="password" name="pass">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <input id="pass" type="password" class="input" data-type="password" name="passckeck">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input">
+                            <input id="pass" type="text" class="input" name="email">
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign Up" onclick="validate()">
+                            <input type="submit" class="button" value="Sign Up" name="submit">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
