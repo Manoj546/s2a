@@ -11,8 +11,12 @@
     <script src="js/login.js"></script>
     <title>Signin</title>
 </head>
-<body>
+<!-- <style>
+    body{ -->
 
+<!-- }
+</style> -->
+<body style="background-image: url('images/login.jpg');background-position: center;background-repeat: no-repeat;background-size: cover; height:100%;">
     <form action="signup.php" method="POST">
         <div class="login-wrap">
             <div class="login-html">
