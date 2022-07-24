@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(/images/21.webp);
+    background: url('../images/21.webp');
     background-size:cover;
 }
 .contact .content{
@@ -129,7 +129,7 @@
     top: -30px;
 }
 
-.contactForm .inputbox input[type="submit"]{
+.contactForm .inputbox .btn{
     width: 100px;
     background: #00bcd4;
     color: rgb(255, 255, 255);
@@ -140,6 +140,9 @@
     font-size: 18px;
 }
 
+.btn{
+    width: 20px;
+}
 @media (max-width:823px){
     .contact{
         padding: 50px;

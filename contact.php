@@ -1,3 +1,15 @@
+<?php 
+
+include 'connect.php';
+error_reporting(0);
+if (isset($_POST['submit'])) {
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$content = $_POST['content'];
+    $sql = "INSERT INTO contact (name, email, phone, content) VALUES ('$name', '$email', '$phone', '$content')";
+    $result = mysqli_query($conn, $sql);}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +17,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/contact.css" />
+  <link rel="stylesheet" href="css/contact.css" />
   <script src="https://kit.fontawesome.com/a8ab30b9ae.js" crossorigin="anonymous"></script>
   <style>
     input::-webkit-outer-spin-button,
@@ -57,26 +69,26 @@
         </div>
       </div>
       <div class="contactForm">
-        <form action="">
+        <form action="" method="POST">
           <h2>Send Message</h2>
           <div class="inputbox">
-            <input type="text" name="" required="required">
+            <input type="text" name="name" required="required">
             <span>Full Name</span>
           </div>
           <div class="inputbox">
-            <input type="email" name="" required="required">
+            <input type="email" name="email" required="required">
             <span>E-mail</span>
           </div>
           <div class="inputbox">
-            <input type="number" name="" required="required"  placeholder="">
+            <input type="number" name="phone" required="required"  placeholder="">
             <span>Phone</span>
           </div>
           <div class="inputbox">
-            <textarea required="required" ></textarea>
+            <textarea required="required" name="content"></textarea>
             <span>Type Here</span>
           </div>
           <div class="inputbox">
-            <input type="submit" name="" value="Send">
+          <button name="submit" class="btn">Send</button>
           </div>
         </form>
       </div>

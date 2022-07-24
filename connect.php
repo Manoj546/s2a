@@ -1,11 +1,14 @@
-<?php
-$dbserver = "localhost";
-$username = "root";
-$password = "";
-$dbname = "s2a";
+<?php 
 
-$conn = mysqli_connect($dbserver,$username,$password,$dbname);
+$server = "localhost";
+$user = "root";
+$pass = "";
+$database = "s2a";
+
+$conn = mysqli_connect($server, $user, $pass, $database);
+
 if (!$conn) {
-    die("connection failed: ". mysqli_connect_error());
+    die("<script>alert('Connection Failed.')</script>");
 }
+
 ?>
