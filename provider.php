@@ -4,21 +4,19 @@ error_reporting(0);
 
 
 if (isset($_POST['submit'])) {
-	$provider = $_POST['provider'];       
-    $reprovider = strtoupper($provider);    //3
+	$provider = strtoupper($_POST['provider']);  //3
 	$organisation = $_POST['organisation'];     //2
-    $scholarship = $_POST['schloarship'];       
-    $restr = strtoupper($schloarship);      //1
+    $scholarship = strtoupper($_POST['schloarship']);            //1
     $scholarshiptype = $_POST['scholarshiptype'];   //1
-    $eligibility = $_POST['eligibility'];       //1
+    $eligibility = strtoupper($_POST['eligibility']);       //1
     $benfit = $_POST['benfit'];     //1
     $start = $_POST['start'];       //1
     $end = $_POST['end'];       //1
-    $sql = "SELECT * FROM scholarship WHERE scholarshipname='$restr'";
+    $sql = "SELECT * FROM scholarship WHERE scholarshipname='$scholarship'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
         $sql = "INSERT INTO scholarship (provider, scholarshipname, scholarshiptype, eligibility, benifit, start, end)
-                VALUES ('$provider', '$restr', '$scholarshiptype','$benfit','$start','$start','$end')";
+                VALUES ('$provider', '$scholarship', '$scholarshiptype', '$eligibility','$benfit', '$start', '$end');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             echo "<script>alert('Wow! Scholarship Registration Completed.')</script>";
@@ -98,7 +96,7 @@ if (isset($_POST['submit'])) {
                                 <input type="date" placeholder="" name="end" required>
                             </div>
                         </div>
-                        <button class="submit">
+                        <button name="submit" class="submit">
                             <span class="btntext">SUBMIT</span>
                             <i class="nav"></i>
                         </button>
