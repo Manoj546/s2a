@@ -4,16 +4,16 @@ error_reporting(0);
 
 
 if (isset($_POST['submit'])) {
-	$provider = $_POST['provider'];
-    $reprovider = strtoupper($provider);
-	$organisation = $_POST['organisation'];
-    $schloarship = $_POST['schloarship'];
-    $restr = strtoupper($schloarship);
-    $schloarshiptype = $_POST['schloarshiptype'];
-    $eligibility = $_POST['eligibility'];
-    $benfit = $_POST['benfit'];
-    $start = $_POST['start'];
-    $end = $_POST['end'];
+	$provider = $_POST['provider'];       
+    $reprovider = strtoupper($provider);    //3
+	$organisation = $_POST['organisation'];     //2
+    $scholarship = $_POST['schloarship'];       
+    $restr = strtoupper($schloarship);      //1
+    $schloarshiptype = $_POST['schloarshiptype'];   //1
+    $eligibility = $_POST['eligibility'];       //1
+    $benfit = $_POST['benfit'];     //1
+    $start = $_POST['start'];       //1
+    $end = $_POST['end'];       //1
     $restr = strtoupper($provider);
     $sql = "SELECT * FROM scholarships WHERE scholarships_name='$restr'";
     $result = mysqli_query($conn, $sql);
