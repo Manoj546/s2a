@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(177, 119, 38);
+}
+.container{
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0);
+}
+.container header{
+    position: relative;
+    font-size: 50px;
+    font-weight: 600;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 500px;
+    border-radius: 8px;
+    background-color: blue;
+
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 500px;
+    background-color: #fff;
+}
+.container form .details{
+    margin-top: 10px;
+    
+}
+
+.container form .title{
+    display: block;
+    margin-top: 8px;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.container form .fields{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 23px;
+    font-weight: 500;
+
+}
+.input-field input{
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 35px;
+    margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.container form button{
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    margin: 25px;
+    background-color: rgb(177, 119, 38);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: rgb(20, 162, 34);;
+}
