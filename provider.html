@@ -1,3 +1,35 @@
+<?php
+include 'connect.php';
+error_reporting(0);
+
+
+if (isset($_POST['submit'])) {
+	$Provider_id = $_POST['Provider_id'];
+	$Organisation name = $_POST['Organisation name'];
+    $restr = strtoupper($username);
+	$password = $_POST['password'];
+    $sql = "SELECT * FROM scholarships WHERE scholarships_name='$restr'";
+    $result = mysqli_query($conn, $sql);
+    if (!$result->num_rows > 0) {
+        $sql = "INSERT INTO scholarships (scholarships_name, eligibility, awards)
+                VALUES ('$restr', '$email', '$password')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            echo "<script>alert('Wow! Scholarship Registration Completed.')</script>";
+            $username = "";
+            $email = "";
+            $_POST['password'] = "";
+            header("Location: scholarinput.php");
+        } else {
+            echo "<script>alert('Woops! Something Wrong Went.')</script>";
+        }
+    } else {
+        echo "<script>alert('Woops! Scholarship Already Exists.')</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,20 +50,20 @@
                         <span class="title" >Enter Schloarship details here:</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label>Provider-id :</label>
-                                <input type="text" placeholder="Enter Provider_id" required>
+                                <label>Provider_id :</label>
+                                <input type="text" placeholder="Enter Provider_id" name="provider" value="<?php echo $provider; ?>" required >
                             </div>
                             <div class="input-field">
-                                <label>Organisation name :</label>
-                                <input type="text" placeholder="" required>
+                                <label>Organisation name <span class="redstar">*</span> :</label>
+                                <input type="text" placeholder="" name="organisation" value="<?php echo $organisation; ?>" required>
                             </div>
                             <div class="input-field">
-                                <label>Schloarrship name :</label>
-                                <input type="text" placeholder="" required>
+                                <label>Schloarship name :</label>
+                                <input type="text" placeholder="" name="schloarship" value="<?php echo $schloarship; ?>" required>
                             </div>
                             <div class="input-field">
-                                <label>Schloarrship type :</label>
-                                <input type="text" placeholder="" required>
+                                <label>Schloarship type :</label>
+                                <input type="text" placeholder="" name="schloarshiptype" value="<?php echo $schloarshiptype; ?>" required>
                             </div>
                             <div class="input-field">
                                 <label>Eligibility :</label>
