@@ -4,10 +4,15 @@ error_reporting(0);
 
 
 if (isset($_POST['submit'])) {
-	$Provider_id = $_POST['Provider_id'];
-	$Organisation name = $_POST['Organisation name'];
+	$Provider = $_POST['Provider'];
+	$organisation = $_POST['organisation'];
+    $schloarship = $_POST['schloarship'];
+    $schloarshiptype = $_POST['schloarshiptype'];
+    $eligibility = $_POST['eligibility'];
+    $benfit = $_POST['benfit'];
+    $start = $_POST['start'];
+    $end = $_POST['end'];
     $restr = strtoupper($username);
-	$password = $_POST['password'];
     $sql = "SELECT * FROM scholarships WHERE scholarships_name='$restr'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
@@ -67,22 +72,22 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="input-field">
                                 <label>Eligibility :</label>
-                                <input type="text" placeholder="" required>
+                                <input type="text" placeholder="" name="eligibility" value="<?php echo $eligibility; ?>" required>
                             </div>
                             <div class="input-field">
                                 <label>Benefits of the schloarship :</label>
-                                <input type="text" placeholder="" required>
+                                <input type="text" placeholder="" name="benfit" value="<?php echo $benfit; ?>" required>
                             </div>
                         </div>
                         <span class="title" >Duration of the Schloarship:</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>Enter start date :</label>
-                                <input type="date" placeholder="" required>
+                                <input type="date" placeholder="" name="start" value="<?php echo $start; ?>" required>
                             </div>
                             <div class="input-field">
                                 <label>Enter end date :</label>
-                                <input type="date" placeholder="" required>
+                                <input type="date" placeholder="" name="end" value="<?php echo $end; ?>" required>
                             </div>
                         </div>
                         <button class="submit">
