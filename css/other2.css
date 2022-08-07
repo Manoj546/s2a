@@ -196,7 +196,7 @@ main {
   padding-bottom: 50px;
 }
 .cover {
-  background: url(/images/25.jpg);
+  background: url("../images/25.jpg");
   background-size: cover;
   padding-top: 230px;
   padding-bottom: 200px;

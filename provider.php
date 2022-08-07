@@ -53,11 +53,11 @@ if (isset($_POST['submit'])) {
                         <div class="fields">
                             <div class="input-field">
                                 <label>Provider_id :</label>
-                                <input type="text" placeholder="" name="provider" value="<?php echo $provider; ?>" required >
+                                <input type="text" placeholder="" name="provider" value="<?php echo $provider; ?>" >
                             </div>
                             <div class="input-field">
                                 <label>Organisation name <span class="redstar">*</span> :</label>
-                                <input type="text" placeholder="" name="organisation" value="<?php echo $organisation; ?>" required>
+                                <input type="text" placeholder="" name="organisation" value="<?php echo $organisation; ?>">
                             </div>
                             <div class="input-field">
                                 <label>Scholarship name :</label>
@@ -65,15 +65,15 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="input-field">
                                 <label>Scholarship type :</label>
-                                <select name="scholarshiptype">
+                                <select name="scholarshiptype" required>
                                     <option value="">--Select--</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Medical">Medical</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="Study Abroad">Study Abroad</option>
-                                    <option value="Management">Management</option>
-                                    <option value="Law">Law</option>
+                                    <option value="ENGINEERING">Engineering</option>
+                                    <option value="MEDICAL">Medical</option>
+                                    <option value="BUSINESS">Business</option>
+                                    <option value="SPORTS">Sports</option>
+                                    <option value="STUDY ABROAD">Study Abroad</option>
+                                    <option value="MANAGEMENT">Management</option>
+                                    <option value="LAW">Law</option>
                                 </select>
                             </div>
                             <div class="input-field">
@@ -89,11 +89,11 @@ if (isset($_POST['submit'])) {
                         <div class="fields">
                             <div class="input-field">
                                 <label>Enter start date :</label>
-                                <input type="date" placeholder="" name="start" required>
+                                <input type="date" placeholder="" name="start">
                             </div>
                             <div class="input-field">
                                 <label>Enter end date :</label>
-                                <input type="date" placeholder="" name="end" required>
+                                <input type="date" placeholder="" name="end">
                             </div>
                         </div>
                         <button name="submit" class="submit">
