@@ -4,10 +4,20 @@ error_reporting(0);
 
 
 if (isset($_POST['submit'])) {
+<<<<<<< HEAD
 	$Provider_id = $_POST['Provider_id'];
 	$Organisation = $_POST['Organisation name'];
+=======
+	$Provider = $_POST['Provider'];
+	$organisation = $_POST['organisation'];
+    $schloarship = $_POST['schloarship'];
+    $schloarshiptype = $_POST['schloarshiptype'];
+    $eligibility = $_POST['eligibility'];
+    $benfit = $_POST['benfit'];
+    $start = $_POST['start'];
+    $end = $_POST['end'];
+>>>>>>> cb435cc8633d83e31180cc5237e50b49cb2b503e
     $restr = strtoupper($username);
-	$password = $_POST['password'];
     $sql = "SELECT * FROM scholarships WHERE scholarships_name='$restr'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
@@ -67,6 +77,7 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="input-field">
                                 <label>Eligibility :</label>
+<<<<<<< HEAD
                                 <select id="cars" name="type">
                                     <option value="">--Select--</option>
                                     <option value="Engineering">Engineering</option>
@@ -77,21 +88,24 @@ if (isset($_POST['submit'])) {
                                     <option value="Management">Management</option>
                                     <option value="Law">Law</option>
                                 </select>
+=======
+                                <input type="text" placeholder="" name="eligibility" value="<?php echo $eligibility; ?>" required>
+>>>>>>> cb435cc8633d83e31180cc5237e50b49cb2b503e
                             </div>
                             <div class="input-field">
                                 <label>Benefits of the schloarship :</label>
-                                <input type="text" placeholder="" required>
+                                <input type="text" placeholder="" name="benfit" value="<?php echo $benfit; ?>" required>
                             </div>
                         </div>
                         <span class="title" >Duration of the Schloarship:</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>Enter start date :</label>
-                                <input type="date" placeholder="" required>
+                                <input type="date" placeholder="" name="start" value="<?php echo $start; ?>" required>
                             </div>
                             <div class="input-field">
                                 <label>Enter end date :</label>
-                                <input type="date" placeholder="" required>
+                                <input type="date" placeholder="" name="end" value="<?php echo $end; ?>" required>
                             </div>
                         </div>
                         <button class="submit">
