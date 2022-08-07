@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2022 at 01:20 PM
+-- Generation Time: Aug 07, 2022 at 09:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,6 +45,23 @@ INSERT INTO `contact` (`ID`, `name`, `email`, `phone`, `content`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `scholarship`
+--
+
+CREATE TABLE `scholarship` (
+  `scholarshipid` int(11) NOT NULL,
+  `provider` varchar(30) NOT NULL,
+  `scholarshipname` varchar(50) NOT NULL,
+  `scholarshiptype` varchar(50) NOT NULL,
+  `eligibility` varchar(20) NOT NULL,
+  `benifit` varchar(20) NOT NULL,
+  `start` date NOT NULL,
+  `end` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -77,6 +94,12 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `scholarship`
+--
+ALTER TABLE `scholarship`
+  ADD PRIMARY KEY (`scholarshipid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -91,6 +114,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `contact`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `scholarship`
+--
+ALTER TABLE `scholarship`
+  MODIFY `scholarshipid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
