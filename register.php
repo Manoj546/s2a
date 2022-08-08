@@ -7,7 +7,7 @@ error_reporting(0);
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: signin.php");
+    header("Location: formnew.php");
 }
 
 if (isset($_POST['submit'])) {
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 				$email = "";
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
-				header("Location: form.html");
+				header("Location: formnew.php");
 			} else {
 				echo "<script>alert('Woops! Something Wrong Went.')</script>";
 			}
