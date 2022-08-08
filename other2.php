@@ -4,7 +4,6 @@ include 'connect.php';
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +98,7 @@ include 'connect.php';
             <h1>Medical Scholarships</h1>
             <div class="contains">
             <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Medical';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -120,11 +119,11 @@ include 'connect.php';
             </div>
         </div>
 
-        <div class="cols" id="engg">
+        <div class="cols" id="bus">
             <h1>Business Scholarships</h1> 
             <div class="contains">           
                 <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Business';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -144,11 +143,11 @@ include 'connect.php';
                 ?>
             </div>
         </div>
-        <div class="cols" id="engg">
+        <div class="cols" id="law">
             <h1>Law Scholarships</h1> 
             <div class="contains">           
                 <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Law';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -168,11 +167,11 @@ include 'connect.php';
                 ?>
             </div>
         </div>
-        <div class="cols" id="engg">
+        <div class="cols" id="man">
             <h1>Management Scholarships</h1> 
             <div class="contains">           
                 <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Management';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -192,11 +191,11 @@ include 'connect.php';
                 ?>
             </div>
         </div>
-        <div class="cols" id="engg">
+        <div class="cols" id="spo">
             <h1>Sports Scholarships</h1> 
             <div class="contains">           
                 <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Sports';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -216,11 +215,11 @@ include 'connect.php';
                 ?>
             </div>
         </div>
-        <div class="cols" id="engg">
+        <div class="cols" id="abr">
             <h1>Study Abroad</h1> 
             <div class="contains">           
                 <?php
-                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
+                $sql = "SELECT * FROM scholarship WHERE scholarshiptype='STUDY ABROAD';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
