@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background-image: url('../images/pro.png');
   justify-content: center;
   background: white;
 }
@@ -43,6 +44,22 @@ body {
   min-height: 500px;
   background-color: #fff;
 }
+.container form .form{
+  position: relative;
+  background-color: #fff;
+}
+.container form .form .second{
+  opacity: 0;
+  pointer-events: none;
+}
+form.secActive .form .second{
+  opacity: 1;
+  pointer-events: auto;
+}
+form.secActive .form .first{
+  opacity: 0;
+  pointer-events: none;
+}
 .container form .details {
   margin-top: 10px;
 }
@@ -53,6 +70,13 @@ body {
   font-size: 25px;
   font-weight: 500;
   margin: 6px 0;
+}
+.container form .title1 {
+  display: block;
+  margin-top: 8px;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 50px;
 }
 
 .container form .fields {
@@ -91,7 +115,7 @@ form .fields .input-field {
 .input-field input[type="date"]:valid {
   color: #333;
 }
-.container form button {
+.container form button, .backbtn{
   display: flex;
   font-size: 20px;
   align-items: center;
@@ -107,10 +131,22 @@ form .fields .input-field {
   transition: all 0.3s linear;
   cursor: pointer;
 }
+.container form button,
+.container form .backbtn{
+  font-size: 18px;
+  font-weight: 400;
+}
 form button:hover {
   background-color: rgb(20, 162, 34);
 }
 
+form .buttons{
+  display: flex;
+  align-items: center;
+}
+form .buttons button , .backbtn{
+  margin-right: 14px;
+}
 select {
   outline: none;
   font-size: 18px;

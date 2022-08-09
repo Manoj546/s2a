@@ -118,7 +118,6 @@ include 'connect.php';
                 ?>
             </div>
         </div>
-
         <div class="cols" id="bus">
             <h1>Business Scholarships</h1> 
             <div class="contains">           

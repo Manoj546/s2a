@@ -74,8 +74,8 @@ if (isset($_POST['submit'])) {
                 <p class="register-head" style="font-size: 1rem; font-weight: 600; position: relative; float: left;">
                     Personal details</p>
                 <div class="input-group">
-                    <input type="text" placeholder="First Name" name="FirstName" value="" required>
-                    <input type="text" placeholder="Last Name" name="LastName" value="">
+                    <input type="text" placeholder="First Name " name="FirstName" value="" required>
+                    <input type="text" placeholder="Last Name" name="LastName" value="" >
                 </div>
                 <div class="input-group">
                     <input type="date" class="sml" placeholder="DOB" name="DOB" value="" required>
