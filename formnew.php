@@ -125,6 +125,10 @@ if (isset($_POST['submit'])) {
                     <input type="text" placeholder="Mother Name" name="MotherName" value="" >
                     <input type="text" placeholder="Mother occupation" name="MotherOccupation" value="" >
                 </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Income certificate" name="income" value="" >
+                    <input type="file" placeholder="" name="incomeCertificate" value="" >
+                </div>
                 <div class="input-group" class="display:flex; flex-direction:row">
                     <button name="button" class="btn" onclick="move(event, 'address')">Next</button>
                     <button name="button" class="btn" onclick="move(event, 'personal')">Previous</button>
