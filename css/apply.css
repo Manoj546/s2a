@@ -10,8 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  width: 100%;
+  width: 80%;
 }
 .info a {
   position: relative;
@@ -20,20 +19,20 @@
   justify-content: center;
   margin: auto;
   background-color: bisque;
-  border-width: 6px;
+  border-width: 1px;
   border-color: rgb(95, 62, 19);
   text-decoration: none;
-  width: 400px;
   cursor: pointer;
   text-align: center;
   height: 5rem;
-  font-size: 200%;
+  font-size: 15px;
   color: black;
   font-weight: 500;
   border-radius: 6rem;
   margin: auto;
   transition: transform 0.2s;
   border: 2px solid black;
+  width: 40%;
 }
 .info a:hover {
   background: #4c3f91;

@@ -87,7 +87,7 @@ session_start();
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
+                <div class="scho">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
@@ -100,8 +100,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) " id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -132,8 +132,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -164,8 +164,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -196,8 +196,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -228,8 +228,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -260,8 +260,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -292,8 +292,8 @@ session_start();
                             <?php }
                         else{ 
                                 ?>
-                            <span class="apply"><a href="welcome.php"><button type="button"
-                                        class="bttn2">Apply</button></a>
+                            <span class="apply"><a href="new.php"><button type="button"
+                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -367,7 +367,19 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script>
+        function getId(a){
+            alert(a.id);
+            createCookie( "idcook" , a.id )
+        }
+        function createCookie(name, value) {
+        var date = new Date();
+        date.setTime(date.getTime()+(10*1000));
+        var expires = "; expires="+date.toGMTString();
 
+        document.cookie = name+"="+value+expires+"; path=/";
+        }
+    </script>
 </body>
 
 </html>

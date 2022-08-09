@@ -1,7 +1,6 @@
 <?php 
 
 session_start();
-
 if (!isset($_SESSION['username'])) {
     header("Location: signin.php");
 }
@@ -17,6 +16,7 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
     <?php echo "<h1>Welcome " . $_SESSION['username'] . "</h1>"; ?>
+    <?php echo $_COOKIE["idcook"]; ?>
     <a href="logout.php">Logout</a>
 </body>
 </html>
