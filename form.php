@@ -327,19 +327,19 @@ header .log{
     <!-- header -->
     <header>
         <div id="menu" class="fas fa-bars"></div>
-        <a href="Index.html" class="logo"><i class="fas fa-user-graduate"></i>Scholarship<b>2All</b></a>
+        <a href="Index.php" class="logo"><i class="fas fa-user-graduate"></i>Scholarship<b>2All</b></a>
         <nav class="navbar">
             <ul>
-                <li><a href="Index.html" class="active"><b>Home</b></a></li>
-                <li><a href="about.html"><b>About</b></a></li>
+                <li><a href="Index.php" class="active"><b>Home</b></a></li>
+                <li><a href="about.php"><b>About</b></a></li>
                 <li><a href="contact.php"><b>Contact</b></a></li>
-                <li><a href="other.html"><b>Other Scholarships</b></a></li>
+                <li><a href="other2.php"><b>Other Scholarships</b></a></li>
             </ul>
         </nav>
         <span style="min-width: 1%;"></span>
     </header>
 <!-- form --> 
-<form action="/Index.html">
+<form action="Index.php">
 <div class="contain">
     <div class="title1 title" style="align-items: center;display: flex; justify-content: center;font-weight: 600;">REGISTRATION FORM</div>
     <div class="title" style="padding-top: 30px;">Personal Details</div>

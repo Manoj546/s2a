@@ -1,9 +1,9 @@
 <?php
 include 'connect.php';
-
+session_start();
 ?>
 
-
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,17 +33,26 @@ include 'connect.php';
 
     <header id="header">
         <div id="menu" class="fas fa-bars"></div>
-        <a href="Index.html" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
+        <a href="Index.php" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
         <nav class="navbar">
             <ul>
-                <li><a href="Index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="Index.php" class="active">Home</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="other2.html" style="color: black;text-decoration: underline;">Other Scholarships</a></li>
+                <li><a href="other2.php" style="color: black;text-decoration: underline;">Other Scholarships</a></li>
             </ul>
         </nav>
-        <div id="login" class="fas fa-user-circle"><a href="signin.php" class="log"
-                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a></div>
+        <div id="login" class="fas fa-user-circle">
+            <?php if(!isset($_SESSION['username'])){ ?>
+            <a href="signin.php" class="log" class="log"
+                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a>
+            <?php }
+            else{ 
+                ?>
+            <a href="logout.php" class="log" class="log"
+                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Logout</a>
+            <?php } ?>
+        </div>
     </header>
     <a href="#header"><i class="fas fa-angle-up fa-6x"
             style="color: black; background-color: rgba(255, 255, 255, 0);display: flex;position: fixed;right: 1%;top: 10px;"></i></a>
@@ -71,22 +80,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="engg">
-            <h1>Engineering Scholarships</h1> 
-            <div class="contains">           
+            <h1>Engineering Scholarships</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Engineering';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -97,20 +114,28 @@ include 'connect.php';
         <div class="cols" id="med">
             <h1>Medical Scholarships</h1>
             <div class="contains">
-            <?php
+                <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Medical';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Award : <?php echo $row['benifit']; ?> </span>
-                            <span class="col1">Eligiblity : <?php echo $row['eligibility']; ?></span>
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
+                            <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -119,22 +144,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="bus">
-            <h1>Business Scholarships</h1> 
-            <div class="contains">           
+            <h1>Business Scholarships</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Business';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -143,22 +176,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="law">
-            <h1>Law Scholarships</h1> 
-            <div class="contains">           
+            <h1>Law Scholarships</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Law';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -167,22 +208,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="man">
-            <h1>Management Scholarships</h1> 
-            <div class="contains">           
+            <h1>Management Scholarships</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Management';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -191,22 +240,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="spo">
-            <h1>Sports Scholarships</h1> 
-            <div class="contains">           
+            <h1>Sports Scholarships</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='Sports';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -215,22 +272,30 @@ include 'connect.php';
             </div>
         </div>
         <div class="cols" id="abr">
-            <h1>Study Abroad</h1> 
-            <div class="contains">           
+            <h1>Study Abroad</h1>
+            <div class="contains">
                 <?php
                 $sql = "SELECT * FROM scholarship WHERE scholarshiptype='STUDY ABROAD';";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <div class="scho">
+                <div class="scho" id="<?php echo $row['scholarshipid']; ?>">
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
+                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
-                        <span class="apply"><a href="login.html"><button type="button" class="bttn2">Apply</button></a>
-                        </span>
+                        <?php if(!isset($_SESSION['username'])){ ?>
+                        <span class="apply"><a href="signin.php"><button type="button" class="bttn2">Apply</button></a>
+                            <?php }
+                        else{ 
+                                ?>
+                            <span class="apply"><a href="welcome.php"><button type="button"
+                                        class="bttn2">Apply</button></a>
+                            </span>
+                            <?php } ?>
                     </span>
                 </div>
                 <?php
@@ -246,8 +311,8 @@ include 'connect.php';
                 <div class="footer-col">
                     <h1>SCHOLARSHIP2ALL</h1>
                     <ul>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="Index.html">Our services</a></li>
+                        <li><a href="about.php">About us</a></li>
+                        <li><a href="Index.php">Our services</a></li>
                         <li><a href="#">Privacy policy</a></li>
                         <li><a href="#">Terms</a></li>
                     </ul>
@@ -256,9 +321,9 @@ include 'connect.php';
                     <h1>get help</h1>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="contact.html">Help</a></li>
-                        <li><a href="contact.html">Send feedback</a></li>
+                        <li><a href="contact.php">Contact us</a></li>
+                        <li><a href="contact.php">Help</a></li>
+                        <li><a href="contact.php">Send feedback</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

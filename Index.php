@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,14 +30,14 @@
 
     <header>
         <div id="menu" class="fas fa-bars"></div>
-        <a href="Index.html" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
+        <a href="Index.php" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
         <nav class="navbar">
             <ul>
                 <li>
-                    <a href="Index.html" class="active" style="color: black;text-decoration: underline;">Home</a>
+                    <a href="Index.php" class="active" style="color: black;text-decoration: underline;">Home</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="contact.php">Contact</a>
@@ -45,8 +48,15 @@
             </ul>
         </nav>
         <div id="login" class="fas fa-user-circle">
+            <?php if(!isset($_SESSION['username'])){ ?>
             <a href="signin.php" class="log" class="log"
                 style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a>
+            <?php }
+            else{ 
+                ?>
+            <a href="logout.php" class="log" class="log"
+                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Logout</a>
+            <?php } ?>
         </div>
     </header>
 
@@ -124,7 +134,7 @@
 
         <!-- -----------marquee---------- -->
 
-        <span class="marquee"><a href="login.html" target="_blank">Login to access the Scholarships.</a></span>
+        <span class="marquee"><a href="signin.php" target="_blank">Login to access the Scholarships.</a></span>
         <div style="height: 100px"></div>
 
         <!-- --------why choose us-------- -->
@@ -226,7 +236,7 @@
             </div>
         </section>
         <!-- do not remove this from here -->
-        <script src="/js/slider.js"></script>
+        <script src="js/slider.js"></script>
 
         <!-- <div class="highlightsbox">
                         <p class="nameofstudent">swapna</p>
@@ -244,19 +254,44 @@
                 style="font-family: Kanit, sans-serif;font-size: 550%;font-weight: 500;color: black;font-stretch: expanded;">Trending
                 now</span>
             <div style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;">
-                <a href="stfc.html" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">STFC
-                        SCHOLARSHIP</button></a>
-                <a href="HDFC.html" rel="noopener noreferrer"><button type="button" class="bttn2 hdfc">HDFC
-                        BANK</button></a>
-                <a href="ROLLS.html" rel="noopener noreferrer"><button type="button" class="bttn2 rolls">ROLLS ROYCE
-                        UNNATI</button></a>
+                <?php if(!isset($_SESSION['username'])){ ?>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <?php }
+            else{ 
+                ?>
+                <a href="stfc.html" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <?php } ?>
+                <?php if(!isset($_SESSION['username'])){ ?>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">HDFC BANK</button></a>
+                <?php }
+            else{ 
+                ?>
+                <a href="HDFC.html" rel="noopener noreferrer"><button type="button" class="bttn2 hdfc">HDFC BANK</button></a>
+                <?php } ?>
+                <?php if(!isset($_SESSION['username'])){ ?>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">ROLLS ROYCE UNNATI</button></a>
+                <?php }
+            else{ 
+                ?>
+                <a href="ROLLS.html" rel="noopener noreferrer"><button type="button" class="bttn2 rolls">ROLLS ROYCE UNNATI</button></a>
+                <?php } ?>
             </div>
             <div
                 style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;padding-top: 7%;padding-bottom: 20%;">
-                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK
-                        SCHOLARSHIP</button></a>
-                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK
-                        SCHOLARSHIP</button></a>
+                <?php if(!isset($_SESSION['username'])){ ?>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <?php }
+            else{ 
+                ?>
+                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <?php } ?>
+                <?php if(!isset($_SESSION['username'])){ ?>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <?php }
+            else{ 
+                ?>
+                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <?php } ?>
             </div>
         </div>
     </main>
@@ -267,8 +302,8 @@
                 <div class="footer-col">
                     <h1>SCHOLARSHIP2ALL</h1>
                     <ul>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="Index.html">Our services</a></li>
+                        <li><a href="about.php">About us</a></li>
+                        <li><a href="Index.php">Our services</a></li>
                         <li><a href="#">Privacy policy</a></li>
                         <li><a href="#">Terms</a></li>
                     </ul>
@@ -277,9 +312,9 @@
                     <h1>get help</h1>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="contact.html">Help</a></li>
-                        <li><a href="contact.html">Send feedback</a></li>
+                        <li><a href="contact.php">Contact us</a></li>
+                        <li><a href="contact.php">Help</a></li>
+                        <li><a href="contact.php">Send feedback</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

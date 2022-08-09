@@ -239,7 +239,8 @@ main div .cols {
   display: grid;
   width: 100%;
   grid-template-columns: auto auto;
-  justify-content: space-evenly;
+  grid-gap: 0;
+
 }
 
 .scho {

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,17 +36,26 @@
 
     <header>
         <div id="menu" class="fas fa-bars"></div>
-        <a href="Index.html" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
+        <a href="Index.php" class="logo"><i class="fas fa-user-graduate fa-lg"></i>Scholarship<b>2All</b></a>
         <nav class="navbar">
             <ul>
-                <li><a href="Index.html" class="active">Home</a></li>
-                <li><a href="about.html" style="color: black;text-decoration: underline;">About</a></li>
+                <li><a href="Index.php" class="active">Home</a></li>
+                <li><a href="about.php" style="color: black;text-decoration: underline;">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="other2.php">Other Scholarships</a></li>
             </ul>
         </nav>
-        <div id="login" class="fas fa-user-circle"><a href="signin.php" class="log"
-                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a></div>
+        <div id="login" class="fas fa-user-circle">
+            <?php if(!isset($_SESSION['username'])){ ?>
+            <a href="signin.php" class="log" class="log"
+                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a>
+            <?php }
+            else{ 
+                ?>
+            <a href="logout.php" class="log" class="log"
+                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Logout</a>
+            <?php } ?>
+        </div>
     </header>
 
 
@@ -87,8 +99,8 @@
                 <div class="footer-col">
                     <h1>SCHOLARSHIP2ALL</h1>
                     <ul>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="Index.html">Our services</a></li>
+                        <li><a href="about.php">About us</a></li>
+                        <li><a href="Index.php">Our services</a></li>
                         <li><a href="#">Privacy policy</a></li>
                         <li><a href="#">Terms</a></li>
                     </ul>
@@ -97,9 +109,9 @@
                     <h1>get help</h1>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="contact.html">Help</a></li>
-                        <li><a href="contact.html">Send feedback</a></li>
+                        <li><a href="contact.php">Contact us</a></li>
+                        <li><a href="contact.php">Help</a></li>
+                        <li><a href="contact.php">Send feedback</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
