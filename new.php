@@ -55,8 +55,6 @@ if (!isset($_SESSION['username'])) {
             </ul>
         </nav>
         <div id="login" class="fas fa-user-circle">
-            <a href="signin.php" class="log" class="log"
-                style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a>
             <?php if(!isset($_SESSION['username'])){ ?>
         <a href="signin.php" class="log" class="log"
             style="font-weight: 600;font-family: Kanit, sans-serif;font-size: 80%;">Login</a>
