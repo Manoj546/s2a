@@ -171,8 +171,7 @@ $username = $_SESSION['username'];
                 <div class="applied">
                     <?php while($row1 = mysqli_fetch_assoc($result1)){ ?>
                     <div class="app2">
-                        <h1 class="applied-head"><?php echo $row1['scholarshipname'];?>
-                        <?php echo $row1['scholarshipid']; ?></h1>
+                        <h1 class="applied-head"><?php echo $row1['scholarshipname'];?></h1>
                         <a href="redirect.php"><button class="applied-bttn" onclick=" getId2(this)" id="<?php echo $row1['scholarshipid']; ?>">Remove</button></a>
                     </div>
                     <?php } ?>

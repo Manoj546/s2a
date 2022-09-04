@@ -86,7 +86,7 @@ if (!isset($_SESSION['username'])) {
                         </ol>
                     </div>
                     <div style="display: block; align-self: flex-start;"><span style="font-weight: 600;
-                        font-family: 'Kanit', sans-serif;font-size: 30;text-decoration: underline;">Benefits:</span><span style="font-size: 15px;"><?php echo $row['benifit'];?></span></div>
+                        font-family: 'Kanit', sans-serif;font-size: 30;text-decoration: underline;">Benefits:</span><span style="font-size: 15px;">  <?php echo $row['benifit'];?></span></div>
 
                     <div class="titlebox" >Documents:</div>
                     <div style="font-size: 15px;">

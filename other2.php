@@ -91,7 +91,6 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -123,7 +122,6 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -155,7 +153,7 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -187,7 +185,7 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -219,7 +217,7 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -251,7 +249,7 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
@@ -283,7 +281,7 @@ session_start();
                     <h3><?php echo $row['scholarshipname']; ?></h3>
                     <span class="align">
                         <span class="data">
-                            <span class="col1">Id :<?php echo $row['scholarshipid']; ?> </span>
+                            
                             <span class="col1">Award :<?php echo $row['benifit']; ?> </span>
                             <span class="col1">Eligiblity :<?php echo $row['eligibility']; ?> </span>
                         </span>
