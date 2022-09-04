@@ -255,42 +255,42 @@ session_start();
                 now</span>
             <div style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;">
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="stfc.html" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">HDFC BANK</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">HDFC BANK</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="HDFC.html" rel="noopener noreferrer"><button type="button" class="bttn2 hdfc">HDFC BANK</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 hdfc">HDFC BANK</button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">ROLLS ROYCE UNNATI</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 stfc">ROLLS ROYCE UNNATI</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="ROLLS.html" rel="noopener noreferrer"><button type="button" class="bttn2 rolls">ROLLS ROYCE UNNATI</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 rolls">ROLLS ROYCE UNNATI</button></a>
                 <?php } ?>
             </div>
             <div
                 style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;padding-top: 7%;padding-bottom: 20%;">
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="GSK.html" rel="noopener noreferrer"><button type="button" class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
                 <?php } ?>
             </div>
         </div>
@@ -355,6 +355,19 @@ session_start();
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script>
+        createCookie( "idcook" , ' ' );
+        function getId(a){
+            createCookie( "idcook" , a.id )
+        }
+        function createCookie(name, value) {
+        var date = new Date();
+        date.setTime(date.getTime()+(10*1000));
+        var expires = "; expires="+date.toGMTString();
+
+        document.cookie = name+"="+value+expires+"; path=/";
+        }
     </script>
 </body>
 

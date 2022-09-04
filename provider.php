@@ -2,38 +2,32 @@
 include 'connect.php';
 error_reporting(0);
 
-
 if (isset($_POST['submit'])) {
-	$schloarship = strtoupper($_POST['schloarship']);  
+	$scholarship = strtoupper($_POST['scholarship']);  
     $scholarshiptype = $_POST['scholarshiptype'];
     $eligibility = strtoupper($_POST['eligibility']); 
-    $benfit = $_POST['benfit']; 
+    $benfit = $_POST['benfit'];
+
+    $photo_name = mysqli_real_escape_string($conn, $_FILES["photo"]["name"]);
+    $photo_tmp_name = $_FILES["photo"]["tmp_name"];
+    $photo_size = $_FILES["photo"]["size"];
+    $photo_new_name = rand() . $photo_name;
+  
+
+
     // second table
     $provider = $_POST['provider']; 
 	$organisation = $_POST['organisation'];                          
     $start = $_POST['start'];       
-    $end = $_POST['end'];
-    $file1 = $_POST['file1'];       
+    $end = $_POST['end'];     
     $sql = "SELECT * FROM scholarship WHERE scholarshipname='$scholarship'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO scholarship (schloarship, scholarshiptype, eligibility, benfit)
-                VALUES ('$scholarship', '$scholarshiptype', '$eligibility','$benfit');";
+        $sql = "INSERT INTO scholarship (scholarshipname, scholarshiptype, eligibility, benifit, start, end, image)
+                VALUES ('$scholarship', '$scholarshiptype', '$eligibility','$benfit', '$start', '$end', '$photo_new_name');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            echo "<script>alert('Wow! Scholarship Registration Completed.')</script>";
-            header("Location: provider.php");
-        } else {
-            echo "<script>alert('Woops! Something Wrong Went.')</script>";
-        }
-    } else {
-        echo "<script>alert('Woops! Scholarship Already Exists.')</script>";
-    }
-    if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO scholarship providers (provider, organisation, start, end,file1)
-                VALUES ('$provider', '$scholarship', '$scholarshiptype', '$eligibility','$benfit', '$start', '$end','$file1');";
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
+            move_uploaded_file($photo_tmp_name, "schouploads/" . $photo_new_name);
             echo "<script>alert('Wow! Scholarship Registration Completed.')</script>";
             header("Location: provider.php");
         } else {
@@ -61,14 +55,14 @@ if (isset($_POST['submit'])) {
       <body>
         <div class="container">
             <header>Scholarship Details</header>
-            <form action="#" method="POST" >
+            <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="form first">
-                    <div class=" details schloarship">
+                    <div class="details scholarship">
                         <span class="title" >Enter Scholarship details here:</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label>Schloarship name <span class="redstar">*</span> :</label>
-                                <input type="text" placeholder="" name="schloarship" value="<?php echo $schloarship; ?>">
+                                <label>Scholarship name <span class="redstar">*</span> :</label>
+                                <input type="text" placeholder="" name="scholarship" value="<?php echo $scholarship; ?>">
                             </div>
                             <div class="input-field">
                                 <label>Scholarship type :</label>
@@ -113,8 +107,8 @@ if (isset($_POST['submit'])) {
                                 <input type="date" placeholder="" name="end">
                             </div>
                             <div class="input-field">
-                                <label>Enter photo of the Schloarship :</label>
-                                <input type="file" name="file1" value="" required>
+                                <label>Enter photo of the scholarship :</label>
+                                <input type="file" accept="image/*" id="photo" name="photo" required>
                             </div>
                         </div>
                         <div class="buttons">

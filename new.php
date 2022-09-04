@@ -77,22 +77,16 @@ if (!isset($_SESSION['username'])) {
             <h2 class="title1"><?php echo $row['scholarshipname'];?></h2>
             <div class="box-container">
                 <div class="imgbox">
-                    <img src="images/9.jpg" alt="" style="width: 100%;height: auto; max-height: 50%;"></div>
+                    <img src="schouploads/<?php echo $row["image"]; ?>" alt="" style="width: 100%;height: auto; max-height: 50%;"></div>
                 <div class="content">
                     <div class="titlebox">Eligibility:</div>
                     <div>
                         <ol>
-                            <li> Open for students who've passed Class 10 with at least 60% marks.</li>
-                            <li>Applicants must be enrolled in an ITI/Polytechnic/Diploma course at a recognised
-                                institution in India.</li>
-                            <li>Family income must be less than or equal to INR 4,00,000 (4 Lakhs) per year.
-                            </li>
-                            <li>Applicants must be the children/wards of commercial transport
-                                drivers/owner-cum-drivers only.</li>
+                        <?php echo $row['eligibility'];?>
                         </ol>
                     </div>
                     <div style="display: block; align-self: flex-start;"><span style="font-weight: 600;
-                        font-family: 'Kanit', sans-serif;font-size: 30;text-decoration: underline;">Benefits:</span><span style="font-size: 15px;"> Up to INR 15,000 (for 1 year)</span></div>
+                        font-family: 'Kanit', sans-serif;font-size: 30;text-decoration: underline;">Benefits:</span><span style="font-size: 15px;"><?php echo $row['benifit'];?></span></div>
 
                     <div class="titlebox" >Documents:</div>
                     <div style="font-size: 15px;">
@@ -100,21 +94,11 @@ if (!isset($_SESSION['username'])) {
                     </div>
                     <br>
                     <ul class="docs">
-                        <li>Passport size photograph</li>
-                        <li>Photo ID proof</li>
-                        <li>Photo ID proof</li>
-                        <li>Aadhaar card</li>
-                        <li>Age proof (Birth Certificate/Passport/Class 10 School Leaving Certificate)</li>
-                        <li>Class 10 Marksheet (self-attested copy)</li>
-                        <li>Commercial driving licence of parent/guardian (copy)</li>
-                        <li>Family income proof (ITR Form-16/income certificate from competent government
-                            authority/salary slips)</li>
-                        <li>Proof of admission (college/school ID card, academic fees receipt) for academic year
-                            2021-22</li>
+                    <?php echo $row['documents'];?>
                     </ul>
-                    <div class="info">
-                        <a href="signin.php">Apply</button></a>
-                    </div>
+                    <button class="info" onclick="add() ">
+                        <a href="signin.php">Apply</a>
+                    </button>
                 </div>
             </div>
             <?php
@@ -182,6 +166,28 @@ if (!isset($_SESSION['username'])) {
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script>
+        function add(){
+            <?php
+            $var = $_COOKIE["idcook"];
+            $username = $_SESSION['username'];
+            $sql = "SELECT * FROM personal_scho WHERE username='$username' AND scholarshipid='$var'";
+            $result = mysqli_query($conn, $sql);
+        if (!$result->num_rows > 0) {
+            $sql = "INSERT INTO personal_scho (username, scholarshipid) VALUES ('$username', '$var');";
+            $result = mysqli_query($conn, $sql);
+        if ($result) {
+            echo "<script>alert('Applied for scholarship')</script>";
+            header("Location: welcome.php");
+        } else {
+            echo "<script>alert('Woops! Something Wrong Went.')</script>";
+        }
+    } else {
+        echo "<script>alert('Woops! Already applied for scholarship.')</script>";
+    }
+            ?>
+        }
     </script>
 </body>
 

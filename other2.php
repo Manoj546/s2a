@@ -101,7 +101,7 @@ session_start();
                         else{ 
                                 ?>
                             <span class="apply"><a href="new.php"><button type="button"
-                                        class="bttn2" onclick="getId(this) " id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
+                                        class="bttn2" onclick="getId(this)" id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -293,7 +293,7 @@ session_start();
                         else{ 
                                 ?>
                             <span class="apply"><a href="new.php"><button type="button"
-                                        class="bttn2" onclick="getId(this) "id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
+                                        class="bttn2" onclick="getId(this)" id="<?php echo $row['scholarshipid']; ?>">Apply</button></a>
                             </span>
                             <?php } ?>
                     </span>
@@ -370,7 +370,6 @@ session_start();
     <script>
         createCookie( "idcook" , ' ' );
         function getId(a){
-            alert(a.id);
             createCookie( "idcook" , a.id )
         }
         function createCookie(name, value) {

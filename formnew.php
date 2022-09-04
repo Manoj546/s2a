@@ -34,19 +34,26 @@ if (isset($_POST['submit'])) {
     $rebank = strtoupper($_POST['rebank']);
     $ifsc = strtoupper($_POST['ifsc']);
     $rifsc = strtoupper($_POST['rifsc']);
+
+    $photo_name = mysqli_real_escape_string($conn, $_FILES["photo"]["name"]);
+    $photo_tmp_name = $_FILES["photo"]["tmp_name"];
+    $photo_size = $_FILES["photo"]["size"];
+    $photo_new_name = rand() . $photo_name;
+
     $sql = "SELECT * FROM personal WHERE username='$username'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO personal (username,FirstName,LastName,DOB,Bgrp,email,phone,gender,FatherName,FatherOccupation,MotherName,MotherOccupation,fadd,School,marks1,College,marks2,bank,ifsc) VALUES ('$username', '$FirstName', '$LastName', '$DOB', '$Bgrp', '$email', '$phone', '$gender', '$FatherName', '$FatherOccupation', '$MotherName', '$MotherOccupation', '$fadd', '$School', '$marks1', '$College', '$marks2', '$bank', '$ifsc');";
+        $sql = "INSERT INTO personal (username,FirstName,LastName,DOB,Bgrp,email,phone,gender,FatherName,FatherOccupation,MotherName,MotherOccupation,fadd,School,marks1,College,marks2,bank,ifsc, Image) VALUES ('$username', '$FirstName', '$LastName', '$DOB', '$Bgrp', '$email', '$phone', '$gender', '$FatherName', '$FatherOccupation', '$MotherName', '$MotherOccupation', '$fadd', '$School', '$marks1', '$College', '$marks2', '$bank', '$ifsc', '$photo_new_name');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            echo "<script>alert('Wow! Scholarship Registration Completed.')</script>";
+            move_uploaded_file($photo_tmp_name, "schouploads/" . $photo_new_name);
+            echo "<script>alert('Wow! User Registration Completed.')</script>";
             header("Location: welcome.php");
         } else {
             echo "<script>alert('Woops! Something Wrong Went.')</script>";
         }
     } else {
-        echo "<script>alert('Woops! Scholarship Already Exists.')</script>";
+        echo "<script>alert('Woops! User Already Exists.')</script>";
     }
 }
 
@@ -68,7 +75,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="container">
-        <form action="" method="POST" class="login-email">
+        <form action="" method="POST" class="login-email" enctype="multipart/form-data">
             <p class="register-head" style="font-size: 2rem; font-weight: 800;">Registeration form</p>
             <div class="content" id="personal">
                 <p class="register-head" style="font-size: 1rem; font-weight: 600; position: relative; float: left;">
@@ -126,8 +133,8 @@ if (isset($_POST['submit'])) {
                     <input type="text" placeholder="Mother occupation" name="MotherOccupation" value="" >
                 </div>
                 <div class="input-group">
-                    <input type="text" placeholder="Income certificate" name="income" value="" >
-                    <input type="file" placeholder="" name="incomeCertificate" value="" >
+                <label for="photo" style="margin-left:120px; font-size:20px;">Profile picture</label>
+                <input type="file" accept="image/*" id="photo" name="photo" required>
                 </div>
                 <div class="input-group" class="display:flex; flex-direction:row">
                     <button name="button" class="btn" onclick="move(event, 'address')">Next</button>
@@ -184,6 +191,10 @@ if (isset($_POST['submit'])) {
                 <div class="input-group">
                     <input type="number" placeholder="Bank IFSCS" name="ifsc" value="" required>
                     <input type="number" placeholder="Re-enter Bank IFSC" name="rifsc" value="" required>
+                </div>
+                <div class="input-group">
+                    <label for="Annualincome" style="margin-left:120px; font-size:20px;">Annual Income</label>
+                    <input type="number" placeholder="" name="Annualincome" value="" required>
                 </div>
 
                 <div class="input-group" class="display:flex; flex-direction:row">

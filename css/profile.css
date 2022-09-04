@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   font-family: "Rubik", sans-serif;
   margin: 0;
@@ -8,6 +8,9 @@
   outline: none;
   text-decoration: none;
   transition: all 0.2s linear;
+}
+body {
+  height: 100vh;
 }
 a:link {
   color: none;
@@ -23,13 +26,19 @@ html {
 html::-webkit-scrollbar {
   width: 1.7rem;
 }
+html::-webkit-scrollbar-track {
+  background: rgba(82, 80, 79, 0.555);
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(82, 80, 79);
+}
 /*----------------nav bar begin----------------*/
 header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   padding: 1.5rem 7%;
@@ -81,7 +90,7 @@ header .navbar ul li {
   text-decoration: none;
 }
 header .navbar ul li a {
-  font-size: 220%;
+  font-size: 250%;
   color: wheat;
   text-decoration: none;
   font-family: "Kanit", sans-serif;
@@ -161,6 +170,7 @@ header div a:hover {
     top: -120%;
     left: 0;
     width: 100%;
+    background: grey;
   }
   header .navbar ul {
     flex-flow: column;
@@ -189,170 +199,192 @@ header div a:hover {
 /*----------------nav bar ends----------------*/
 
 /*----------------main tag begins----------------*/
-body {
+.main {
   width: 100%;
-  height: auto;
-}
-main {
-  margin-top: 120px;
+  height: 90%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
-  justify-content: space-evenly;
-  font-size: 20px;
-}
-.box-container {
-  width: 100%;
-  padding: 40px 200px;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 5rem;
-}
-.title1 {
-  font-size: 45px;
-  display: block;
-  font-family: "Kanit", sans-serif;
-  font-weight: 600;
-  width: 80%;
-  align-self: center;
+  align-items: center;
   justify-content: center;
-  text-decoration: underline;
-}
-.imgbox {
-  max-width: fit-content;
-  display: inline-block;
-  align-self: center;
 }
 .content {
+  width: 60%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  align-self: start;
+  height: 90%;
+}
+.images {
+  width: 40%;
+  height: 90%;
+  margin-top: 0px;
+  display: flex;
   flex-direction: column;
-  width: 100%;
-  height: auto;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  top: 10px;
+}
+.info {
+  margin: 10px 0;
+  padding: 0 0;
   font-size: 25px;
 }
-.titlebox {
+.tab {
+  float: left;
+  width: 30%;
+  height: 90%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
   display: block;
-  align-self: flex-start;
-  font-weight: 600;
-  font-family: "Kanit", sans-serif;
-  font-size: 30;
-  text-decoration: underline;
-}
-ol {
-  font-size: 15px;
-}
-.docs {
-  font-size: 15px;
+  background-color: inherit;
+  color: black;
+  padding: 20px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 0 0 35px 0;
+  overflow: none;
 }
 
-/*----------------footer----------------*/
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
 
-.container {
-  max-width: 100%;
-  margin: auto;
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: rgba(92, 90, 90, 0.84);
+  color: azure;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.729);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-ul {
-  list-style: none;
-}
-.footer {
-  background-color: #24262b;
-  padding: 60px 0;
-  display: flex;
-}
-.footer-col {
-  flex: 1 1 50%;
-  width: 25%;
-  padding: 0 15px;
-  justify-content: center;
-}
-.footer-col h1 {
-  font-size: 220%;
-  color: #ffffff;
-  text-transform: capitalize;
-  margin-bottom: 30px;
-  font-weight: 500;
   position: relative;
+  padding-left: 70px;
+  width: 70%;
+  padding-top: 10vh;
+  border-left: none;
+  height: 90%;
 }
-.footer-col h1::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  background-color: #e91e63;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
+.headings {
+  font-weight: 600;
+  font-size: 30px;
+  margin: 30px 0;
 }
-.footer-col ul li:not(:last-child) {
-  margin-bottom: 10px;
+.ai {
+  font-size: 20px;
 }
-.footer-col ul li a {
-  font-size: 220%;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  display: block;
-  transition: all 0.2s ease;
+i {
+  padding: 2px 8px;
 }
-.footer-col ul li a:hover {
-  color: #ffffff;
-  padding-left: 8px;
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.footer-col .social-links a {
+.input-group {
+  flex-direction: row;
+  position: relative;
+  width: 40%;
   display: inline-block;
-  height: 10%;
-  width: 9%;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 10px 15px 15px 0;
-  text-align: center;
-  line-height: 60px;
-  border-radius: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease;
+  left: 10%;
+  height: 100%;
+  padding: 10px 0px;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  transition: 0.3s;
+  overflow: none;
+  font-size: 18px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.588);
+  font-weight: 500;
 }
-.footer-col .social-links a:hover {
-  color: #24262b;
-  background-color: #ffffff;
+.output {
+  font-weight: 400;
+  padding-left: 10px;
 }
-.footer-col div ul li {
+input {
+  display: none;
+}
+
+.applied {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
 }
-.footer-col div ul li ::after {
-  content: "";
-  position: absolute;
-  width: 10%;
-  display: block;
-  height: 2px;
-  background-color: #e91e63;
-  bottom: -8px;
+.app2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 0px;
 }
-@media (max-width: 767px) {
-  .footer-col {
-    width: auto;
-    margin-bottom: 30px;
-  }
+.applied-head {
+  font-size: 20px;
+  width: fit-content;
 }
-@media (max-width: 574px) {
-  .footer-col {
-    width: 100px;
-  }
+.applied-bttn {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  transition: transform 0.2s;
+  background-color: bisque;
+  border-color: rgb(95, 62, 19);
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  color: black;
+  border: 2px solid black;
+}
+.applied-bttn:hover {
+  background: #4c3f91;
+  color: white;
+  transform: scale(1.15);
+  text-decoration: none;
+}
+.applied-bttn:active {
+  background: #4c3f91;
+  color: white;
+  transform: scale(1.15);
+  text-decoration: none;
+}
+.applied-bttn:visited {
+  background: #4c3f91;
+  color: white;
+  transform: scale(1.15);
+  text-decoration: none;
+}
+.actv {
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin-left: 110px;
+  margin-top: 30px;
+  text-decoration: none;
+  text-transform: none;
 }
