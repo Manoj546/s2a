@@ -23,8 +23,8 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM scholarship WHERE scholarshipname='$scholarship'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO scholarship (scholarshipname, scholarshiptype, eligibility, benifit, start, end, image)
-                VALUES ('$scholarship', '$scholarshiptype', '$eligibility','$benfit', '$start', '$end', '$photo_new_name');";
+        $sql = "INSERT INTO scholarship (scholarshipname,provider, scholarshiptype, eligibility, benifit, start, end, image)
+                VALUES ('$scholarship','$provider','$scholarshiptype','$eligibility','$benfit', '$start', '$end', '$photo_new_name');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             move_uploaded_file($photo_tmp_name, "schouploads/" . $photo_new_name);
