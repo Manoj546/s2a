@@ -4,7 +4,7 @@ include 'connect.php';
 
 session_start();
 
-error_reporting(0);
+// error_reporting(0);
 
 if (isset($_SESSION['username'])) {
     $username2=$_SESSION['username'];
@@ -23,11 +23,19 @@ if (isset($_POST['submit'])) {
 		$username2=$_SESSION['username'];
 		$sql = "SELECT * FROM personal WHERE username='$username2';";
 		$result = mysqli_query($conn, $sql);
+		date_default_timezone_set("Asia/Calcutta");
+		$date = date('Y-m-d');
+		$time = date('H:i:s');
+		$sql4 = "INSERT INTO sessionhis (username, startdate, starttime) VALUES ('$username2', '$date', '$time')";
+		$result4 = mysqli_query($conn, $sql4);
 		if (!$result->num_rows > 0) {
-		header("Location: formnew.php");}
-		else
-		header("Location: welcome.php");
-	} else {
+			header("Location: formnew.php");
+		}
+		else{
+			header("Location: welcome.php");
+	 	}
+	} 
+	else {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	}
 }

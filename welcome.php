@@ -6,7 +6,6 @@ if (!isset($_SESSION['username'])) {
     header("Location: signin.php");
 }
 $username = $_SESSION['username'];
-
 ?>
 
 
@@ -75,6 +74,16 @@ $username = $_SESSION['username'];
                 <button class="tablinks" onclick="openCity(event, '3')"><i
                         class="fa-solid fa-credit-card fa-lg"></i>Financial Details</button>
                 <button class="tablinks" onclick="openCity(event, '4')"><i class="fa-solid fa-user-graduate fa-lg"></i>Applied Scholarship</button>
+                <div style="display:flex; flex-direction: column; position: relative; align-items: center; justify-content: end; height: 65%; ">
+                    <?php
+                    $sql2 = "SELECT * FROM sessionhis WHERE username='$username' order by sessionid desc limit 1 OFFSET 1";
+                    $result2 = mysqli_query($conn, $sql2);
+                    ?>
+                    <h3 style="margin: 5px 5px 0 0; font-size: 20px; font-weight:600; display:flex; position: relative; justify-content:space-around;">Last Login</h3>
+                    <?php while($row2 = mysqli_fetch_assoc($result2)){ ?>
+                    <h3 style="margin: 5px 5px 0 0; font-size: 18px; font-weight:400; display:flex; position: relative; justify-content:space-around;"><?php echo $row2['startdate'];?>       <?php echo $row2['starttime'];?></h3>
+                    <?php } ?>
+                </div>
             </div>
             <?php 
             $sql = "SELECT * FROM personal WHERE username='$username'";
