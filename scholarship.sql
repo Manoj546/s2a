@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2022 at 02:27 PM
+-- Generation Time: Sep 15, 2022 at 09:06 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,7 +40,9 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`ID`, `name`, `email`, `phone`, `content`) VALUES
-(1, 'HI', 'hello@hello', '1234', '1234');
+(2, 'Rahul', 'rahul@gmail.com', '9000998889', 'Can you please add some more schloarships.\r\nThank '),
+(3, 'Keerthana', 'keerthana@gmail.com', '9136639999', 'Thank you so much for the schloarships'),
+(4, 'Anirudh', 'anirudh@gmail.com', '9879869999', 'These schloarships really helped me in pursue my s');
 
 -- --------------------------------------------------------
 
@@ -76,13 +78,8 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`username`, `FirstName`, `LastName`, `DOB`, `Bgrp`, `email`, `phone`, `gender`, `FatherName`, `FatherOccupation`, `MotherName`, `MotherOccupation`, `fadd`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`, `Image`) VALUES
-('', 'MANOJ', 'H', '2022-08-17', 'B+', '', 79464, 'MALE', 'SURYA', 'BML', 'REKH', 'CO', '103, NIS, MALUR, BANG, BANGALORE, KARNATAKA', 'SH', 80, 'NA', 90, '1234', '2345', 'temp.jpeg'),
-('am', 'MNA', '', '2022-08-06', 'C+', 'shubham@gmail', 2353454, 'FEMALE', 'DSFSAFDAFDSAF', 'UOUOU', 'BCCXC', 'TER', 'SDFSA, EWRG, GFHD, FGHGD, GFDH, EWR', 'DGD', 23, 'ERWW', 23, '324323', '', 'temp.jpeg'),
-('amar', 'AMARNATH', 'K', '2022-08-10', 'A-', 'amarpersonal@amar', 789456, 'OTHERS', 'A A', 'Z', 'B B', 'Y', 'ANAR, ANDHRA, ANDHRA, INDIA, KOTTORU, HYDERA, TELA', 'COMITTE', 100, 'BANGALORE', 90, '12345', '12345', 'temp.jpeg'),
-('manojhowale', 'MANOJ', 'HOWALE', '2022-09-08', 'C', 'manoj@mail', 2147483647, 'MALE', 'DSFDSA', 'DSFDSAF', 'SDFDASF', 'SDFDSAF', 'DSFSFSFA, SDFASDFDASFDAS, SDFSFDSFA, SDFSADFASDF, ', 'YTUT', 56, 'DFSFAS', 454, '324234', '234234', '1896936037img  (6).jpg'),
-('rohith02', 'ROHITH', 'JIGEN', '2022-09-08', 'C', 'rohith@rohith', 123453, 'FEMALE', 'JIGEN', 'J', 'DFSF', 'DFS', 'DSFSAF, SDFSAD, DSFASF, SDFDSAF, DSFASF, DSFSF', 'SDFSAF', 23, 'DFSFS', 454, '35435', '4353', '618376765img  (9).jpg'),
-('shub', 'MNA', 'SDF', '2022-08-06', 'C+', 'shubham@gmail', 2353454, 'FEMALE', 'DSFSAFDAFDSAF', 'UOUOU', 'BCCXC', 'TER', 'SDFSA, EWRG, GFHD, FGHGD, GFDH, EWR', 'DGD', 23, 'ERWW', 23, '324323', '', 'temp.jpeg'),
-('swayam2', 'SWAYAM', 'K', '2022-08-05', 'S', 'swayam@mail', 12345, 'MALE', 'K', 'K', 'M', 'M', 'ASD, ERER, YUY, HJKHJ, CVXC, PIOI', 'DSFS', 13, 'SDFS', 67, '1234', '1234', 'temp.jpeg');
+('AMARNATH', 'KOTTURU', 'AMARNATH', '2022-09-04', 'B+', 'amarnathkothur2470@gmail.', 2147483647, 'MALE', 'VENKATA RATHANAMAIAH', 'BUSINESS', 'NALINAKSHI', 'HOUSE-WIFE', '3/231, PUTLUR ROAD, NEAR SLN THEATRE, ANANTHAPUR, ', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144', '2113918574amarnath.jpg'),
+('kripakara', 'KRIPAKARA', 'M N', '2002-09-29', 'AB-', 'kripakara@gmail.com', 2147483647, 'MALE', 'M NARAYANA B', 'BUSINESS', 'MALATI', 'HOME MAKER', 'JP NAGAR, 3-50, NEAR RAJIGUDA TEMPLE, BENGALURU, B', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '1234567', '7654321', '820830743kripakara.jpeg');
 
 -- --------------------------------------------------------
 
@@ -100,15 +97,14 @@ CREATE TABLE `personal_scho` (
 --
 
 INSERT INTO `personal_scho` (`username`, `scholarshipid`) VALUES
-('manojhowale', 10),
-('manojhowale', 25),
-('rohith02', 11),
-('swayam2', 5),
-('swayam2', 8),
-('swayam2', 10),
-('swayam2', 13),
-('swayam2', 15),
-('swayam2', 25);
+('kripakara', 26),
+('kripakara', 27),
+('kripakara', 28),
+('kripakara', 29),
+('kripakara', 30),
+('kripakara', 31),
+('kripakara', 32),
+('kripakara', 33);
 
 -- --------------------------------------------------------
 
@@ -135,22 +131,27 @@ CREATE TABLE `scholarship` (
 --
 
 INSERT INTO `scholarship` (`scholarshipid`, `provider`, `scholarshipname`, `scholarshiptype`, `eligibility`, `benifit`, `start`, `end`, `elig2`, `documents`, `image`) VALUES
-(1, '1', 'scholsrship', 'ENGINEERING', 'ENGINEERING STUDENTS', '35,000', '2022-08-07', '2022-09-07', '<li> Open for students who\'ve passed Class 10 with at least 60% marks.</li>\r\n                            <li>Applicants must be enrolled in an ITI/Polytechnic/Diploma course at a recognised\r\n                                institution in India.</li>\r\n                            <li>Family income must be less than or equal to INR 4,00,000 (4 Lakhs) per year.\r\n                            </li>\r\n                            <li>Applicants must be the children/wards of commercial transport\r\n                                drivers/owner-cum-drivers only.</li>', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(3, '2', 'NURSING SCHOLARSHIP, SASAKAWA INDIA LEPROSY FOUNDA', 'MEDICAL', 'B.SC. NURSING (BASIC', 'up to INR 1,13,000 (Including Tuition fe', '2022-08-07', '2022-12-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(4, '3', 'UNIVERSITY OF QUEENSLAND MBA STUDENT SCHOLARSHIP -', 'BUSINESS', 'MBA APPLICANTS', '25% tuition fee waiver', '2022-08-07', '2023-01-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(5, '4', 'THE LSAT - INDIA TOPPER SCHOLARSHIP 2022', 'LAW', 'CLASS 12 PASSED STUDENTS APPEARING FOR LSAT 2021', 'Up to INR 4 lakh', '2022-08-31', '2023-08-31', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(7, '3', 'UNIVERSITY OF QUEENSLAND MBA STUDENT SCHOLARSHIP - INTERNATIONAL 2022', 'MANAGEMENT', 'MBA APPLICANTS', '40% tuition fee waiver', '2022-08-07', '2022-11-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(8, '5', 'PDEU ADMISSION SCHOLARSHIP 2022-23', 'SPORTS', 'UG, PG AND PH.D. APPLICANTS', 'Variable awards', '2022-08-31', '2023-08-31', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(9, '6', 'STRATHCLYDE BUSINESS SCHOOL FULL TIME MBA DEANS EXCELLENCE AWARDS 2022', 'STUDY ABROAD', 'MS APPLICANTS', 'Scholarship worth GBP 15,000', '2022-08-07', '2023-01-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(10, '7', 'INDIAN OIL CORPORATION SCHOLARSHIP', 'ENGINEERING', 'MUST BELONG TO UR, SC, ST OR OBC CATEGORY AND SHOULD CURRENTLY PURSUING BTECH', 'An amount of Rs 1.44 lakh will be given to the selected students', '2022-08-07', '2022-11-30', '<li>Open for Indian residents only.</li>\r\n                                    <li>Students who have lost their parent(s)/earning family member due to COVID-19\r\n                                        pandemic.</li>\r\n                                    <li>Applicants must be pursuing graduation (general & professional) courses in STEM\r\n                                        subjects. </li>\r\n                                    <li>Applicants should be currently enrolled and continuing their education. </li>\r\n                                    <li>Annual family income of the applicant should be less than INR 6,00,000 (6 Lakh)\r\n                                        from all sources.</li>', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(11, '8', 'HARVARD MEDICAL SCHOOL', 'MEDICAL', 'SCHOLARSHIPS FOR MINORITIES', 'Varies', '2022-08-07', '2022-12-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(12, '9', 'PNB HOUSING FINANCE LIMITED PROTSAHAN SCHOLARSHIP 2019-20 (MBA)', 'BUSINESS', 'MBA (MARKETING & FINANCE) - 1ST YEAR STUDENTS', 'INR 2,00,000', '2022-08-31', '2023-01-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(13, '10', 'UNIVERSITY OF MELBOURNE, TOM ZUCKER SCHOLARSHIP IN EMPLOYMENT LAW AND LABOUR', 'LAW', 'LAW APPLICANT', 'Up to AUD 12,500', '2022-08-07', '2022-12-07', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(15, '6', 'STRATHCLYDE BUSINESS SCHOOL FULL TIME MBA DEANS EXCELLENCE AWARDS 2021', 'MANAGEMENT', 'MBA APPLICANTS', 'Scholarship worth GBP 15,000', '2022-09-01', '2023-09-01', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(16, '11', 'DRDO-DRL TEZPUR RESEARCH ASSOCIATESHIP AND JUNIOR RESEARCH FELLOWSHIP 2022', 'SPORTS', 'POSTGRADUATE AND PH.D. DEGREE HOLDERS', 'Up to INR 54,000', '2022-09-01', '2022-12-01', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(17, '11', 'DRDO-DRL TEZPUR RESEARCH ASSOCIATESHIP AND JUNIOR RESEARCH', 'SPORTS', 'POSTGRADUATE AND PH.D. DEGREE HOLDERS', 'Up to INR 54,000', '2022-08-01', '2022-12-01', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(18, '1', 'BMSCE SCHOLARSHIP', 'ENGINEERING', 'MTECH', '40000', '2022-08-10', '2022-08-29', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', ''),
-(25, '', 'SCHAEFFLER INDIA HOPE ENGINEERING SCHOLARSHIP 2022-23', 'MEDICAL', '•	OPEN FOR STUDENTS FROM GUJARAT, MAHARASHTRA, AND TAMIL NADU ONLY.', 'Up to INR 75,000 per year for the complete duration of the engineering program', '2022-09-05', '2022-09-25', '', '<li>Marksheet of class 12th</li>                             <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN                                 card) </li>                             <li>Current year admission proof (fee receipt/admission letter/institution identity                                 card/bonafide certificate) </li>                             <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li>                             <li>Bank account details of the scholarship applicant </li>                             <li>Photograph of the applicant</li>', '1265253096Picture1.jpg');
+(26, '1', 'SHINING STAR SCHOLARSHIP PROGRAMME', 'MEDICAL', 'STUDENTS PURSUING THEIR FIRST-YEAR BACHELOR OF DENTAL SURGERY', 'Each successfully selected student will receive INR 1,05,000 per year for 4 years ', '2022-09-05', '2022-09-20', '<li>•Annual family income of the applicants should not be more than INR 8,00,000/- from all sources.</li>\r\n<li>•Children or family members of employees of HALEON India (erstwhile GlaxoSmithKline Consumer Healthcare), IDA, Goodera & Buddy4Study are not eligible.</li>\r\n<li>•Students from pan-India can apply.</li>\r\n', '<li>•Marksheet of the previous class/semester.</li>\r\n<li>•Photo identity proof (Aadhaar Card/voter id card/driving license/PAN card)</li>\r\n<li>•Current year admission proof (fee receipt/admission letter/institution ID card/bonafide certificate)</li>\r\n<li>•Family income proof (Government-issued documents such as tax return, income certificate from local administration, EWS (Economic Weaker Section) certificate)</li>\r\n•Bank account details of the applicant or parent.</li>\r\n<li>•Photograph of the applicant.</li>\r\n', '1167353704.jpg'),
+(27, '1', 'SCHAEFFLER INDIA HOPE ENGINEERING SCHOLARSHIP', 'ENGINEERING', 'APPLICANTS MUST HAVE SCORED MORE THAN 60% MARKS IN CLASS 12 ', 'Up to INR 75,000 per year for the complete duration of the engineering program', '2022-09-05', '2022-09-30', '<li>•Students from Gujarat, Maharashtra, and Tamil Nadu only.</li>\r\n<li>•Applicants must have scored more than 60% marks in Class 12 (Science) in academic session 2021-22.</li>\r\n<li>•Only applicants enrolled in 1st year of the engineering program at any recognized colleges in India can apply.</li>\r\n<li>•Annual family income of the applicants must be less than INR 5,00,000.</li>\r\n<li>•Children of employees of Schaeffler India or Buddy4Study are not eligible for this scholarship program.</li>\r\n', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '134674158student3.png'),
+(28, '1', 'GSK SCHOLARS PROGRAMME 2022-23', 'MEDICAL', 'APPLICANTS MUST HAVE OBTAINED AT LEAST 65% MARKS IN CLASS 12', 'Up to INR 1,00,000 per year for students pursuing MBBS', '2022-09-10', '2022-09-20', '<li>Students must be pursuing the first-year of MBBS programme from government colleges.</li>\r\n<li>Applicants must have obtained at least 65% marks in Class 12 board examinations.</li>\r\n<li>Annual family income of the applicants should be below INR 6,00,000 from all sources.</li>\r\n<li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li>\r\n<li>Open for Indian nationals only.</li>\r\n\r\n', '<li>Marksheet of Class 12.</li>\r\n<li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card)</li>\r\n<li>Current year admission proof (fee receipt/admission letter/institution identity card/bonafide certificate)</li>\r\n<li>Family income proof (salary slip, Form 16, Income Certificate, ITR)</li>\r\n<li>Bank account details of applicant.</li>\r\n<li>Photograph of the applicant.</li>\r\n', '4227338077.jpg'),
+(29, '1', 'BYPL SASHAKT SCHOLARSHIP 2022-23', 'ENGINEERING', 'ANNUAL FAMILY INCOME OF THE APPLICANT MUST NOT BE MORE THAN INR 6,00,000', 'Up to INR 30,000 ', '2022-09-25', '2022-11-05', '\r\n<li>•Applicants must be studying in the final year of undergraduate programme (any stream) in any government institute in Delhi.</li> \r\n<li>•Must have secured more than 55% marks in their last appeared examination.</li> \r\n<li>•Annual family income of the applicant must not be more than INR 6,00,000 (6 lakhs) from all sources.</li> \r\n<li>•Children of employees of BSES Yamuna Power Limited (BYPL) and Buddy4Study are not eligible.</li> \r\n', '<li>•Passport size photograph</li>\r\n<li>•Aadhaar card</li>\r\n<li>•Family income proof (Salary Slip, Form 16, Income Certificate, ITR, etc.)</li>\r\n<li>•Marksheets of last qualifying examination and Class 12.</li>\r\n<li>•Latest college fee receipt (for current academic year)</li>\r\n<li>•Fee structure (for current academic year).</li> \r\n<li>•Bank account details of the scholarship applicant (cancelled cheque/passbook copy).</li>', '1114703950BSES.png'),
+(30, '1', 'VIRCHOW SCHOLARSHIP PROGRAM 2022', 'BUSINESS', 'OPEN FOR GIRL STUDENTS ONLY AND CHILDREN OF EMPLOYEES OF VIRCHOW & BUDDY4STUDY ARE NOT ELIGIBLE', 'For Class 10 Passed Students (studying in Class 11): INR 10,000 per year For Class 12 Passed Student', '2022-09-20', '2022-09-30', '<li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '1693733339Virchow.png'),
+(31, '1', 'GEV MEMORIAL MERIT SCHOLARSHIP', 'LAW', 'THEY SHOULD BE PURSUING LLB/LLM DEGREE COURSES (ANY YEAR) AT A RECOGNISED LAW INSTITUTE IN INDIA.', 'The GEV memorial merit scholarship 2021 for law students offers an amount between INR 50,000 to INR ', '2022-09-06', '2022-09-26', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>A copy of the mark sheets from the Secondary School Certificate (SSC) examination up until their recent qualifying examination</li>\r\n<li>A copy of the admission letter to the law college, institute or university</li>\r\n<li>Their parents\' income certificate (salary statement, IT returns).</li>\r\n<li>A copy of the result of CLAT, LSAT-India, AILET or other law entrance exams.</li>\r\n<li>Passport size photographs.</li>\r\n<li>Scanned copy of the candidate\'s aadhaar card.</li>', '559630283pro.png'),
+(32, '1', 'INTERNATIONAL MPHIL SCHOLARSHIPS', 'STUDY ABROAD', 'MUST BE A CITIZEN OF THE REGIONS WHERE WE OPERATE THAT ARE LISTED ON OUR WEBSITE', 'Funded tuition of up-to $3000 per semester', '2022-10-01', '2022-12-01', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '894373198student9.jpg'),
+(33, '1', 'MEXT JAPAN SCHOLARSHIPS 2023', 'MANAGEMENT', '1.INTEND TO STUDY ABROAD IN JAPAN FROMHAVE ACHIEVED A GPA OF AT LEAST 2.30 ON A 3.00 SCALE AT THEIR ', 'Full admission fee  100% of tuition (covered by the APU Tuition Reduction Scholarship)', '2022-10-18', '2022-12-18', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>1.Submit the APU application by November 16, 2022 (for September 2023 Enrollment).Additional documents are not required to be considered for this scholarship.</li>\r\n<li>2.APU reviews application documents and selects outstanding candidates to recommend to MEXT.</li>\r\n<li>3.Applicants selected to be recommended for this scholarship are notified with their final APU application results.</li>\r\n<li>4.Selected applicants complete and submit additional MEXT application documents to APU.<>/li', '774188740MEXT.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessionhis`
+--
+
+CREATE TABLE `sessionhis` (
+  `sessionid` int(11) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `startdate` date NOT NULL,
+  `starttime` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -170,16 +171,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'new', 'new@new', '202cb962ac59075b964b07152d234b70'),
-(2, 'hello', 'hello@123', '202cb962ac59075b964b07152d234b70'),
-(3, 'manoj', 'howale@m', '202cb962ac59075b964b07152d234b70'),
-(4, 'shub', 'shub@shub', '202cb962ac59075b964b07152d234b70'),
-(5, 'amar', 'amar@amar', '81dc9bdb52d04dc20036dbd8313ed055'),
-(6, 'swayam2', 'swayam@mail', '202cb962ac59075b964b07152d234b70'),
-(7, 'user', 'newuser@new', '81dc9bdb52d04dc20036dbd8313ed055'),
-(8, 'amarnath3', 'amarnath3@mail', '81dc9bdb52d04dc20036dbd8313ed055'),
-(9, 'rohith02', 'rohith02@mail', '81dc9bdb52d04dc20036dbd8313ed055'),
-(10, 'manojhowale', 'manoj@mail', '81dc9bdb52d04dc20036dbd8313ed055');
+(12, 'AMARNATH', 'amarnathkothur2470@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(13, 'kripakara', 'kripakara@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(14, 'Manoj', 'manoj@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexes for dumped tables
@@ -211,6 +205,13 @@ ALTER TABLE `scholarship`
   ADD PRIMARY KEY (`scholarshipid`);
 
 --
+-- Indexes for table `sessionhis`
+--
+ALTER TABLE `sessionhis`
+  ADD PRIMARY KEY (`sessionid`),
+  ADD KEY `sessions` (`username`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -224,19 +225,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `scholarship`
 --
 ALTER TABLE `scholarship`
-  MODIFY `scholarshipid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `scholarshipid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `sessionhis`
+--
+ALTER TABLE `sessionhis`
+  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
