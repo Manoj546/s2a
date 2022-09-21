@@ -19,7 +19,24 @@ if (isset($_POST['submit'])) {
     $provider = $_POST['provider']; 
 	$organisation = $_POST['organisation'];                          
     $start = $_POST['start'];       
-    $end = $_POST['end'];     
+    $end = $_POST['end'];  
+    $pname = $_POST['pname'];   
+    
+    $sql2 = "SELECT * FROM provider WHERE providerid='$provider'";
+    $result2 = mysqli_query($conn, $sql2);
+    if (!$result2->num_rows > 0) {
+        $sql2 = "INSERT INTO provider (providerid, providername, organization)
+                VALUES ('$provider','$pname','$organisation');";
+        $result2 = mysqli_query($conn, $sql2);
+        if ($result2) {
+            header("Location: provider.php");
+        } else {
+            echo "<script>alert('Woops! Something Wrong Went.')</script>";
+        }
+    } else {
+        echo "<script>alert('Woops! Provider Already Exists.')</script>";
+    }
+
     $sql = "SELECT * FROM scholarship WHERE scholarshipname='$scholarship'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {

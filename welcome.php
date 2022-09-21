@@ -2,6 +2,7 @@
 
 include 'connect.php';
 session_start();
+error_reporting();
 if (!isset($_SESSION['username'])) {
     header("Location: signin.php");
 }
