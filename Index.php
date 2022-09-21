@@ -45,6 +45,12 @@ session_start();
                 <li>
                     <a href="other2.php">Other Scholarships</a>
                 </li>
+                <?php if(isset($_SESSION['username'])){ ?>
+                <li>
+                    <a href="welcome.php">Profile</a>
+                </li>
+                    <?php }
+                ?>    
             </ul>
         </nav>
         <div id="login" class="fas fa-user-circle">
@@ -255,42 +261,42 @@ session_start();
                 now</span>
             <div style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;">
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="26"  onclick="getId(this)"  class="bttn2 stfc">SHINING STAR</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">STFC SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="26" onclick="getId(this)"  class="bttn2 stfc">SHINING STAR </button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">HDFC BANK</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="29" onclick="getId(this)"  class="bttn2 stfc">BYPL SASHAKT</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 hdfc">HDFC BANK</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="29" onclick="getId(this)"  class="bttn2 hdfc">BYPL SASHAKT</button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 stfc">ROLLS ROYCE UNNATI</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="30"  onclick="getId(this)"  class="bttn2 stfc">VIRCHOW</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10"  onclick="getId(this)"  class="bttn2 rolls">ROLLS ROYCE UNNATI</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="30"  onclick="getId(this)"  class="bttn2 rolls">VIRCHOW</button></a>
                 <?php } ?>
             </div>
             <div
                 style="align-items: center;display: flex;justify-content: space-around;flex: 1 1 1 50%;padding-top: 7%;padding-bottom: 20%;">
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="28" onclick="getId(this)"  class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="28" onclick="getId(this)"  class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
                 <?php } ?>
                 <?php if(!isset($_SESSION['username'])){ ?>
-                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 stfc">GSK SCHOLARSHIP</button></a>
+                <a href="signin.php" rel="noopener noreferrer"><button type="button" id="27" onclick="getId(this)"  class="bttn2 stfc">SCHAEFFLER</button></a>
                 <?php }
             else{ 
                 ?>
-                <a href="new.php" rel="noopener noreferrer"><button type="button" id="10" onclick="getId(this)"  class="bttn2 gsk">GSK SCHOLARSHIP</button></a>
+                <a href="new.php" rel="noopener noreferrer"><button type="button" id="27" onclick="getId(this)"  class="bttn2 gsk">SCHAEFFLER</button></a>
                 <?php } ?>
             </div>
         </div>

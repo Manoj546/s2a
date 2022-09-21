@@ -46,7 +46,7 @@ $username = $_SESSION['username'];
         <nav class="navbar">
             <ul>
                 <li>
-                    <a href="Index.php" class="active" style="color: black;text-decoration: underline;">Home</a>
+                    <a href="Index.php" style="color: black;text-decoration: underline;">Home</a>
                 </li>
                 <li>
                     <a href="about.php">About</a>
@@ -136,24 +136,28 @@ $username = $_SESSION['username'];
                     </div>
                 </form>
             </div>
-
+            <?php 
+            $sql7 = "SELECT * FROM academic_finance WHERE username='$username'";
+            $result7 = mysqli_query($conn, $sql7);
+                while($row7 = mysqli_fetch_assoc($result7)){
+                ?>
             <div id="2" class="tabcontent">
                 <h3 class="headings">Academic Details</h3>
                 <form action="">
                     <div class="input-group">
-                        <label for="school">School: <span class="output"><?php echo $row['School'];?></span></label>
+                        <label for="school">School: <span class="output"><?php echo $row7['School'];?></span></label>
                         <input type="text" name="school" value="" required>
                     </div>
                     <div class="input-group">
-                        <label for="mark1">10th marks: <span class="output"><?php echo $row['marks1'];?></span></label>
+                        <label for="mark1">10th marks: <span class="output"><?php echo $row7['marks1'];?></span></label>
                         <input type="text" name="mark1" value="" required>
                     </div>
                     <div class="input-group">
-                        <label for="college">College: <span class="output"><?php echo $row['College'];?></span></label>
+                        <label for="college">College: <span class="output"><?php echo $row7['College'];?></span></label>
                         <input type="text" name="college" value="" required>
                     </div>
                     <div class="input-group">
-                        <label for="mark2">12th marks: <span class="output"><?php echo $row['marks2'];?></span></label>
+                        <label for="mark2">12th marks: <span class="output"><?php echo $row7['marks2'];?></span></label>
                         <input type="text" name="mark2" value="" required>
                     </div>
                 </form>
@@ -163,15 +167,20 @@ $username = $_SESSION['username'];
                 <h3 class="headings">Financial Details</h3>
                 <form action="">
                     <div class="input-group">
-                        <label for="bank">Bank account: <span class="output"><?php echo $row['bank'];?></span></label>
+                        <label for="bank">Bank account: <span class="output"><?php echo $row7['bank'];?></span></label>
                         <input type="text" name="bank" value="" required>
                     </div>
                     <div class="input-group">
-                        <label for="ifsc">IFSC code: <span class="output"><?php echo $row['ifsc'];?></span></label>
+                        <label for="ifsc">IFSC code: <span class="output"><?php echo $row7['ifsc'];?></span></label>
+                        <input type="text" name="ifsc" value="" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ifsc">Income: <span class="output"><?php echo $row7['income'];?></span></label>
                         <input type="text" name="ifsc" value="" required>
                     </div>
                 </form>
             </div>
+            <?php } ?>
             <?php
             $sql1 = "SELECT * FROM personal_scho p, scholarship s WHERE p.username='$username' and s.scholarshipid=p.scholarshipid";
             $result1 = mysqli_query($conn, $sql1);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2022 at 03:39 PM
+-- Generation Time: Sep 21, 2022 at 04:21 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -36,6 +36,13 @@ CREATE TABLE `academic_finance` (
   `bank` varchar(25) NOT NULL,
   `ifsc` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `academic_finance`
+--
+
+INSERT INTO `academic_finance` (`username`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`) VALUES
+('AMARNATH', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144');
 
 -- --------------------------------------------------------
 
@@ -73,7 +80,7 @@ CREATE TABLE `personal` (
   `DOB` date NOT NULL,
   `Bgrp` varchar(5) NOT NULL,
   `email` varchar(25) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` bigint(11) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `FatherName` varchar(25) NOT NULL,
   `FatherOccupation` varchar(25) NOT NULL,
@@ -94,8 +101,8 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`username`, `FirstName`, `LastName`, `DOB`, `Bgrp`, `email`, `phone`, `gender`, `FatherName`, `FatherOccupation`, `MotherName`, `MotherOccupation`, `fadd`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`, `Image`) VALUES
-('AMARNATH', 'KOTTURU', 'AMARNATH', '2022-09-04', 'B+', 'amarnathkothur2470@gmail.', 2147483647, 'MALE', 'VENKATA RATHANAMAIAH', 'BUSINESS', 'NALINAKSHI', 'HOUSE-WIFE', '3/231, PUTLUR ROAD, NEAR SLN THEATRE, ANANTHAPUR, ', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144', '2113918574amarnath.jpg'),
-('kripakara', 'KRIPAKARA', 'M N', '2002-09-29', 'AB-', 'kripakara@gmail.com', 2147483647, 'MALE', 'M NARAYANA B', 'BUSINESS', 'MALATI', 'HOME MAKER', 'JP NAGAR, 3-50, NEAR RAJIGUDA TEMPLE, BENGALURU, B', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '1234567', '7654321', '820830743kripakara.jpeg');
+('AMARNATH', 'KOTTURU', 'AMARNATH', '2022-09-04', 'B+', 'amarnathkothur2470@gmail.', 9214748364, 'MALE', 'VENKATA RATHANAMAIAH', 'BUSINESS', 'NALINAKSHI', 'HOUSE-WIFE', '3/231, PUTLUR ROAD, NEAR SLN THEATRE, ANANTHAPUR, ', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144', '2113918574amarnath.jpg'),
+('kripakara', 'KRIPAKARA', 'M N', '2002-09-29', 'AB-', 'kripakara@gmail.com', 8884768565, 'MALE', 'M NARAYANA B', 'BUSINESS', 'MALATI', 'HOME MAKER', 'JP NAGAR, 3-50, NEAR RAJIGUDA TEMPLE, BENGALURU, B', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '8884768565', '7654321', '820830743kripakara.jpeg');
 
 -- --------------------------------------------------------
 
@@ -113,6 +120,8 @@ CREATE TABLE `personal_scho` (
 --
 
 INSERT INTO `personal_scho` (`username`, `scholarshipid`) VALUES
+('AMARNATH', 27),
+('AMARNATH', 29),
 ('kripakara', 26),
 ('kripakara', 27),
 ('kripakara', 28),
@@ -176,9 +185,7 @@ INSERT INTO `scholarship` (`scholarshipid`, `provider`, `scholarshipname`, `scho
 (30, 1, 'VIRCHOW SCHOLARSHIP PROGRAM 2022', 'BUSINESS', 'OPEN FOR GIRL STUDENTS ONLY AND CHILDREN OF EMPLOYEES OF VIRCHOW & BUDDY4STUDY ARE NOT ELIGIBLE', 'For Class 10 Passed Students (studying in Class 11): INR 10,000 per year For Class 12 Passed Student', '2022-09-20', '2022-09-30', '<li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '1693733339Virchow.png'),
 (31, 1, 'GEV MEMORIAL MERIT SCHOLARSHIP', 'LAW', 'THEY SHOULD BE PURSUING LLB/LLM DEGREE COURSES (ANY YEAR) AT A RECOGNISED LAW INSTITUTE IN INDIA.', 'The GEV memorial merit scholarship 2021 for law students offers an amount between INR 50,000 to INR ', '2022-09-06', '2022-09-26', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>A copy of the mark sheets from the Secondary School Certificate (SSC) examination up until their recent qualifying examination</li>\r\n<li>A copy of the admission letter to the law college, institute or university</li>\r\n<li>Their parents\' income certificate (salary statement, IT returns).</li>\r\n<li>A copy of the result of CLAT, LSAT-India, AILET or other law entrance exams.</li>\r\n<li>Passport size photographs.</li>\r\n<li>Scanned copy of the candidate\'s aadhaar card.</li>', '559630283pro.png'),
 (32, 1, 'INTERNATIONAL MPHIL SCHOLARSHIPS', 'STUDY ABROAD', 'MUST BE A CITIZEN OF THE REGIONS WHERE WE OPERATE THAT ARE LISTED ON OUR WEBSITE', 'Funded tuition of up-to $3000 per semester', '2022-10-01', '2022-12-01', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '894373198student9.jpg'),
-(33, 1, 'MEXT JAPAN SCHOLARSHIPS 2023', 'MANAGEMENT', '1.INTEND TO STUDY ABROAD IN JAPAN FROMHAVE ACHIEVED A GPA OF AT LEAST 2.30 ON A 3.00 SCALE AT THEIR ', 'Full admission fee  100% of tuition (covered by the APU Tuition Reduction Scholarship)', '2022-10-18', '2022-12-18', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>1.Submit the APU application by November 16, 2022 (for September 2023 Enrollment).Additional documents are not required to be considered for this scholarship.</li>\r\n<li>2.APU reviews application documents and selects outstanding candidates to recommend to MEXT.</li>\r\n<li>3.Applicants selected to be recommended for this scholarship are notified with their final APU application results.</li>\r\n<li>4.Selected applicants complete and submit additional MEXT application documents to APU.<>/li', '774188740MEXT.png'),
-(36, 1, 'SHINING STAR SCHOLARSHIP PROGRAMME2', 'ENGINEERING', 'BE', '24432423', '2022-09-26', '2022-09-30', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '2069137481Timetable.png'),
-(38, 4, 'SHINING STAR SCHOLARSHIP PROGRAMME3', 'ENGINEERING', 'STUDENTS PURSUING THEIR FIRST-YEAR BACHELOR OF DEN..', 'Each successfully selected student will receive IN.', '2022-09-19', '2022-10-01', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>Marksheet of class 12th</li> <li>A government-issued identity proof (Aadhaar card/voter identity card/driving license/PAN card) </li> <li>Current year admission proof (fee receipt/admission letter/institution  card/bonafide certificate) </li> <li>Family income proof (salary slip, Form 16, Income Certificate, ITR) </li> <li>Bank account details of the scholarship applicant </li> <li>Photograph of the applicant</li>', '1169914694Timetable.png');
+(33, 1, 'MEXT JAPAN SCHOLARSHIPS 2023', 'MANAGEMENT', '1.INTEND TO STUDY ABROAD IN JAPAN FROMHAVE ACHIEVED A GPA OF AT LEAST 2.30 ON A 3.00 SCALE AT THEIR ', 'Full admission fee  100% of tuition (covered by the APU Tuition Reduction Scholarship)', '2022-10-18', '2022-12-18', '<li>Open for Indian nationals only.</li> <li>Students must be pursuing the first year of programme from government colleges in the academic year 2021-22</li> <li>Children of employees of GSK, GiveIndia and Buddy4Study are not eligible</li> <li>Applicants must have obtained at least 65% marks in board examinations</li> <li>Annual family income of the applicants should be below INR 6,00,000 (6 lakh)  all sources</li>', '<li>1.Submit the APU application by November 16, 2022 (for September 2023 Enrollment).Additional documents are not required to be considered for this scholarship.</li>\r\n<li>2.APU reviews application documents and selects outstanding candidates to recommend to MEXT.</li>\r\n<li>3.Applicants selected to be recommended for this scholarship are notified with their final APU application results.</li>\r\n<li>4.Selected applicants complete and submit additional MEXT application documents to APU.<>/li', '774188740MEXT.png');
 
 -- --------------------------------------------------------
 
@@ -192,6 +199,19 @@ CREATE TABLE `sessionhis` (
   `startdate` date NOT NULL,
   `starttime` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sessionhis`
+--
+
+INSERT INTO `sessionhis` (`sessionid`, `username`, `startdate`, `starttime`) VALUES
+(1, 'kripakara', '2022-09-21', '19:22:11'),
+(2, 'kripakara', '2022-09-21', '19:23:12'),
+(3, 'AMARNATH', '2022-09-21', '19:32:20'),
+(4, 'AMARNATH', '2022-09-21', '19:36:10'),
+(5, 'manoj123', '2022-09-21', '19:37:29'),
+(6, 'AMARNATH', '2022-09-21', '19:42:38'),
+(7, 'AMARNATH', '2022-09-21', '19:45:53');
 
 -- --------------------------------------------------------
 
@@ -213,7 +233,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (12, 'AMARNATH', 'amarnathkothur2470@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
 (13, 'kripakara', 'kripakara@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(14, 'Manoj', 'manoj@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055');
+(14, 'Manoj', 'manoj@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(15, 'manoj123', 'manoj@mail', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexes for dumped tables
@@ -290,13 +311,13 @@ ALTER TABLE `scholarship`
 -- AUTO_INCREMENT for table `sessionhis`
 --
 ALTER TABLE `sessionhis`
-  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables

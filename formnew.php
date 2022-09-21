@@ -34,6 +34,7 @@ if (isset($_POST['submit'])) {
     $rebank = strtoupper($_POST['rebank']);
     $ifsc = strtoupper($_POST['ifsc']);
     $rifsc = strtoupper($_POST['rifsc']);
+    $annualinc = $_POST['Annualincome'];
 
     $photo_name = mysqli_real_escape_string($conn, $_FILES["photo"]["name"]);
     $photo_tmp_name = $_FILES["photo"]["tmp_name"];
@@ -43,10 +44,12 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM personal WHERE username='$username'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO personal (username,FirstName,LastName,DOB,Bgrp,email,phone,gender,FatherName,FatherOccupation,MotherName,MotherOccupation,fadd,School,marks1,College,marks2,bank,ifsc, Image) VALUES ('$username', '$FirstName', '$LastName', '$DOB', '$Bgrp', '$email', '$phone', '$gender', '$FatherName', '$FatherOccupation', '$MotherName', '$MotherOccupation', '$fadd', '$School', '$marks1', '$College', '$marks2', '$bank', '$ifsc', '$photo_new_name');";
+        $sql = "INSERT INTO personal (username,FirstName,LastName,DOB,Bgrp,email,phone,gender,FatherName,FatherOccupation,MotherName,MotherOccupation,fadd, Image) VALUES ('$username', '$FirstName', '$LastName', '$DOB', '$Bgrp', '$email', '$phone', '$gender', '$FatherName', '$FatherOccupation', '$MotherName', '$MotherOccupation', '$fadd',  '$photo_new_name');";
+        $sql8 = "INSERT INTO academic_finance (username,School,marks1,College,marks2,bank,ifsc,income) VALUES ('$username','$School', '$marks1', '$College', '$marks2', '$bank', '$ifsc','$annualinc');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             move_uploaded_file($photo_tmp_name, "schouploads/" . $photo_new_name);
+            $result = mysqli_query($conn, $sql8);
             echo "<script>alert('Wow! User Registration Completed.')</script>";
             header("Location: welcome.php");
         } else {
