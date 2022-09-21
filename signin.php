@@ -4,7 +4,7 @@ include 'connect.php';
 
 session_start();
 
-// error_reporting(0);
+error_reporting(0);
 
 if (isset($_SESSION['username'])) {
     $username2=$_SESSION['username'];

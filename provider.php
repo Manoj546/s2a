@@ -95,6 +95,10 @@ if (isset($_POST['submit'])) {
                                 <input type="text" placeholder="" name="provider" value="<?php echo $organisation; ?>">
                             </div>
                             <div class="input-field">
+                                <label>Provider name :</label>
+                                <input type="text" placeholder="" name="pname">
+                            </div>
+                            <div class="input-field">
                                 <label>Organisation name :</label>
                                 <input type="text" placeholder="" name="organisation" value="<?php echo $scholarshiptype; ?>" >
                             </div>
