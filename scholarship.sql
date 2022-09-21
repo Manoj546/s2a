@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2022 at 04:21 PM
+-- Generation Time: Sep 21, 2022 at 04:46 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,15 +34,18 @@ CREATE TABLE `academic_finance` (
   `College` varchar(25) NOT NULL,
   `marks2` int(11) NOT NULL,
   `bank` varchar(25) NOT NULL,
-  `ifsc` varchar(25) NOT NULL
+  `ifsc` varchar(25) NOT NULL,
+  `income` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `academic_finance`
 --
 
-INSERT INTO `academic_finance` (`username`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`) VALUES
-('AMARNATH', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144');
+INSERT INTO `academic_finance` (`username`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`, `income`) VALUES
+('AMARNATH', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144', 0),
+('KRIPAKARA', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '1234567', '7654321', 0),
+('manoj123', 'SDFA', 223, 'DSFAS', 322, '2342', '32423', 200000);
 
 -- --------------------------------------------------------
 
@@ -102,7 +105,8 @@ CREATE TABLE `personal` (
 
 INSERT INTO `personal` (`username`, `FirstName`, `LastName`, `DOB`, `Bgrp`, `email`, `phone`, `gender`, `FatherName`, `FatherOccupation`, `MotherName`, `MotherOccupation`, `fadd`, `School`, `marks1`, `College`, `marks2`, `bank`, `ifsc`, `Image`) VALUES
 ('AMARNATH', 'KOTTURU', 'AMARNATH', '2022-09-04', 'B+', 'amarnathkothur2470@gmail.', 9214748364, 'MALE', 'VENKATA RATHANAMAIAH', 'BUSINESS', 'NALINAKSHI', 'HOUSE-WIFE', '3/231, PUTLUR ROAD, NEAR SLN THEATRE, ANANTHAPUR, ', 'BHASHYAM', 10, 'SRI CHAITANYA', 940, '123456', '9848144', '2113918574amarnath.jpg'),
-('kripakara', 'KRIPAKARA', 'M N', '2002-09-29', 'AB-', 'kripakara@gmail.com', 8884768565, 'MALE', 'M NARAYANA B', 'BUSINESS', 'MALATI', 'HOME MAKER', 'JP NAGAR, 3-50, NEAR RAJIGUDA TEMPLE, BENGALURU, B', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '8884768565', '7654321', '820830743kripakara.jpeg');
+('kripakara', 'KRIPAKARA', 'M N', '2002-09-29', 'AB-', 'kripakara@gmail.com', 8884768565, 'MALE', 'M NARAYANA B', 'BUSINESS', 'MALATI', 'HOME MAKER', 'JP NAGAR, 3-50, NEAR RAJIGUDA TEMPLE, BENGALURU, B', 'CHAITANYA', 550, 'DECCAN HIGH SCHOOL', 980, '8884768565', '7654321', '820830743kripakara.jpeg'),
+('manoj123', 'MANOJ', 'H', '2022-09-09', 'W', 'sadfa@fdsa', 24234, 'MALE', 'SDFDA', 'DSFAS', 'DSFDA', 'SDFDAS', 'SDFASD, SDFAS, SDAFA, SDFAF, FASDF, DSFA', '', 0, '', 0, '', '', '2127620673Timetable.png');
 
 -- --------------------------------------------------------
 
@@ -121,15 +125,14 @@ CREATE TABLE `personal_scho` (
 
 INSERT INTO `personal_scho` (`username`, `scholarshipid`) VALUES
 ('AMARNATH', 27),
+('AMARNATH', 28),
 ('AMARNATH', 29),
-('kripakara', 26),
-('kripakara', 27),
-('kripakara', 28),
 ('kripakara', 29),
 ('kripakara', 30),
 ('kripakara', 31),
 ('kripakara', 32),
-('kripakara', 33);
+('manoj123', 27),
+('manoj123', 30);
 
 -- --------------------------------------------------------
 
@@ -211,7 +214,15 @@ INSERT INTO `sessionhis` (`sessionid`, `username`, `startdate`, `starttime`) VAL
 (4, 'AMARNATH', '2022-09-21', '19:36:10'),
 (5, 'manoj123', '2022-09-21', '19:37:29'),
 (6, 'AMARNATH', '2022-09-21', '19:42:38'),
-(7, 'AMARNATH', '2022-09-21', '19:45:53');
+(7, 'AMARNATH', '2022-09-21', '19:45:53'),
+(8, 'manoj123', '2022-09-21', '19:56:55'),
+(9, 'kripakara', '2022-09-21', '20:10:53'),
+(10, 'manoj123', '2022-09-21', '20:12:06'),
+(11, 'kripakara', '2022-09-21', '20:12:20'),
+(12, 'manoj123', '2022-09-21', '20:13:54'),
+(13, 'kripakara', '2022-09-21', '20:14:06'),
+(14, 'manoj123', '2022-09-21', '20:14:50'),
+(15, 'kripakara', '2022-09-21', '20:15:09');
 
 -- --------------------------------------------------------
 
@@ -311,7 +322,7 @@ ALTER TABLE `scholarship`
 -- AUTO_INCREMENT for table `sessionhis`
 --
 ALTER TABLE `sessionhis`
-  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
